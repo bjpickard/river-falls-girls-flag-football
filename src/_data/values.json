@@ -1,6 +1,14 @@
 [
-  { "title": "Develop", "description": "Purposeful instruction in fundamentals, positions, concepts, and game awareness." },
-  { "title": "Compete", "description": "Quality regional competition with preparation, communication, and team play." },
-  { "title": "Grow", "description": "Confidence, resilience, leadership, accountability, and mental performance." },
-  { "title": "Belong", "description": "Every player valued for who she is and encouraged by who she is becoming." }
+  {
+    "title": "Develop",
+    "description": "Purposeful instruction in fundamentals, positions, concepts, and situational awareness."
+  },
+  {
+    "title": "Compete",
+    "description": "Quality regional competition with preparation, communication, and team play."
+  },
+  {
+    "title": "Belong",
+    "description": "Person-first philosophy: what you do is not who you are or why you have value."
+  }
 ]
