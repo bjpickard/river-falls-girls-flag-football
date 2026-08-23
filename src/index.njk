@@ -89,7 +89,6 @@ permalink: index.html
       <div class="shell">
         <div class="section-heading-row">
           <div><p class="section-number">02 / Teams & evaluations</p><h2>Find your team.</h2></div>
-          <p>Winter training. Spring preparation. Summer competition.</p>
         </div>
         <div class="team-grid">
           {% for team in teams %}<article class="team-card"><div class="age-badge">{{ team.age }}</div><h3>{{ team.title }}</h3><p>{{ team.description }}</p><span>{{ team.note }}</span></article>{% endfor %}
