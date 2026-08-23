@@ -1,5 +1,17 @@
 [
-  { "audience": "Coaches", "headline": "Teach, challenge, and support.", "description": "Coaches will put player safety first, teach multiple positions and football concepts, run purposeful practices, communicate clearly, correct mistakes constructively, and give every rostered player a meaningful role." },
-  { "audience": "Players", "headline": "Bring your best controllables.", "description": "Be a great teammate. Be kind, respectful, and supportive. Bring confidence and personality while controlling your Focus, Attitude, Mindset, and Effort." },
-  { "audience": "Families", "headline": "Make the experience better.", "description": "Support every RFGF player, respect opponents and officials, let coaches coach, communicate concerns privately and constructively, meet team deadlines, and keep the car ride home centered on the player’s experience." }
+  {
+    "audience": "Coaches",
+    "headline": "Teach, challenge, and support.",
+    "description": "Coaches will put player safety first, run purposeful practices, communicate clearly, correct mistakes constructively, and ensure every member of the team feels valued and important - because they are."
+  },
+  {
+    "audience": "Players",
+    "headline": "Be a great teammate.",
+    "description": "Be kind, respectful, and supportive. Dominate \"TNT\" - the things that Take No Talent. Bring confidence and personality, and control your controllables."
+  },
+  {
+    "audience": "Families",
+    "headline": "Make the experience better.",
+    "description": "Support every RFGF player, respect opponents and officials, let coaches coach, communicate concerns privately and constructively, meet team deadlines, and keep the car ride home centered on the player’s experience, not their performance."
+  }
 ]
