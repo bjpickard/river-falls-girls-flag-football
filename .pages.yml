@@ -79,9 +79,6 @@ content:
     fields:
       - { name: mission, label: Mission, type: text, required: true }
       - { name: vision, label: Vision, type: text, required: true }
-      - { name: standard, label: Program standard, type: text, required: true }
-      - { name: why_flag, label: "Why girls' flag football?", type: text }
-      - { name: flag_101, label: Flag Football 101, type: text }
 
   - name: values
     label: Program Values
