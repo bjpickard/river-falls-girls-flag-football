@@ -1,0 +1,217 @@
+media:
+  input: src/assets
+  output: /assets
+  rename: safe
+  categories: [image]
+
+settings:
+  content:
+    merge: direct
+
+content:
+  - name: settings
+    label: Site Settings
+    type: file
+    path: src/_data/settings.json
+    format: json
+    fields:
+      - { name: site_name, label: Site name, type: string, required: true }
+      - { name: description, label: Search description, type: text, required: true }
+      - { name: location, label: Location, type: string }
+      - { name: age_divisions, label: Age divisions, type: string }
+      - { name: launch_label, label: Launch label, type: string }
+      - { name: instagram_handle, label: Instagram handle, type: string }
+      - { name: instagram_url, label: Instagram URL, type: string }
+      - { name: copyright_year, label: Copyright year, type: number }
+      - name: logo
+        label: RFGF logo
+        type: image
+        required: true
+        options:
+          extensions: [png, jpg, jpeg, webp]
+          rename: safe
+      - { name: logo_alt, label: Logo description, type: string, required: true }
+
+  - name: hero
+    label: Homepage Hero
+    type: file
+    path: src/_data/hero.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small heading, type: string }
+      - { name: line_one, label: Headline line 1, type: string, required: true }
+      - { name: line_two, label: Headline line 2, type: string, required: true }
+      - { name: line_three, label: Gold headline line, type: string, required: true }
+      - { name: introduction, label: Introduction, type: text, required: true }
+      - { name: primary_button, label: Primary button text, type: string }
+      - { name: primary_link, label: Primary button link, type: string }
+      - { name: secondary_button, label: Secondary link text, type: string }
+      - { name: secondary_link, label: Secondary link target, type: string }
+      - name: image
+        label: Hero team photo
+        type: image
+        required: true
+        options:
+          extensions: [png, jpg, jpeg, webp]
+          rename: safe
+      - { name: image_alt, label: Hero photo description, type: text, required: true }
+      - name: principles
+        label: FAME principles
+        type: string
+        list: true
+
+  - name: about
+    label: About the Program
+    type: file
+    path: src/_data/about.json
+    format: json
+    fields:
+      - { name: section_label, label: Section label, type: string }
+      - { name: headline, label: Headline, type: string }
+      - { name: paragraph_one, label: First paragraph, type: text }
+      - { name: paragraph_two, label: Second paragraph, type: text }
+
+  - name: organization
+    label: Mission, Vision & Program Standard
+    type: file
+    path: src/_data/organization.json
+    format: json
+    fields:
+      - { name: mission, label: Mission, type: text, required: true }
+      - { name: vision, label: Vision, type: text, required: true }
+      - { name: standard, label: Program standard, type: text, required: true }
+      - { name: why_flag, label: "Why girls' flag football?", type: text }
+      - { name: flag_101, label: Flag Football 101, type: text }
+
+  - name: values
+    label: Program Values
+    type: file
+    path: src/_data/values.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Value, type: string, required: true }
+      - { name: description, label: Description, type: text, required: true }
+
+  - name: teams
+    label: Teams
+    type: file
+    path: src/_data/teams.json
+    format: json
+    list: true
+    fields:
+      - { name: age, label: Age division, type: string, required: true }
+      - { name: title, label: Team heading, type: string, required: true }
+      - { name: description, label: Description, type: text, required: true }
+      - { name: note, label: Card note, type: string }
+
+  - name: pathway
+    label: Player Pathway
+    type: file
+    path: src/_data/pathway.json
+    format: json
+    list: true
+    fields:
+      - { name: season, label: Season, type: string, required: true }
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: description, label: Description, type: text, required: true }
+
+  - name: season
+    label: Practices & Playing Time
+    type: file
+    path: src/_data/season.json
+    format: json
+    fields:
+      - { name: headline, label: Headline, type: string }
+      - { name: introduction, label: Introduction, type: text }
+      - { name: practices, label: Practice schedule, type: text }
+      - { name: practice_items, label: Practice elements, type: string, list: true }
+      - { name: attendance, label: Attendance and multi-sport athletes, type: text }
+      - { name: playing_time, label: Playing time philosophy, type: text }
+
+  - name: uniform
+    label: Uniform Feature
+    type: file
+    path: src/_data/uniform.json
+    format: json
+    fields:
+      - { name: label, label: Small heading, type: string }
+      - { name: headline, label: Headline, type: string }
+      - { name: description, label: Description, type: text }
+      - name: image
+        label: Uniform image
+        type: image
+        required: true
+        options:
+          extensions: [png, jpg, jpeg, webp]
+          rename: safe
+      - { name: image_alt, label: Image description for accessibility, type: text, required: true }
+
+  - name: coach
+    label: Coach Profile
+    type: file
+    path: src/_data/coach.json
+    format: json
+    fields:
+      - { name: quote, label: Coaching statement, type: text }
+      - { name: role, label: Role, type: string }
+      - { name: name, label: Name, type: string }
+      - { name: paragraph_one, label: First paragraph, type: text }
+      - { name: paragraph_two, label: Second paragraph, type: text }
+      - { name: paragraph_three, label: Third paragraph, type: text }
+      - { name: safety, label: Player safety, type: text }
+      - { name: mental_performance, label: Mental performance, type: text }
+      - name: image
+        label: Coaching photo
+        type: image
+        required: true
+        options:
+          extensions: [png, jpg, jpeg, webp]
+          rename: safe
+      - { name: image_alt, label: Coaching photo description, type: text, required: true }
+
+  - name: expectations
+    label: Coach, Player & Family Expectations
+    type: file
+    path: src/_data/expectations.json
+    format: json
+    list: true
+    fields:
+      - { name: audience, label: Audience, type: string, required: true }
+      - { name: headline, label: Headline, type: string, required: true }
+      - { name: description, label: Expectations, type: text, required: true }
+
+  - name: policies
+    label: Fees & Policies
+    type: file
+    path: src/_data/policies.json
+    format: json
+    fields:
+      - { name: headline, label: Headline, type: string }
+      - { name: introduction, label: Season fee introduction, type: text }
+      - { name: included, label: Included expenses, type: string, list: true }
+      - { name: family_costs, label: Travel and family expenses, type: text }
+      - { name: assistance, label: Financial assistance, type: text }
+      - { name: refunds, label: Withdrawals and refunds, type: text }
+
+  - name: faqs
+    label: Frequently Asked Questions
+    type: file
+    path: src/_data/faqs.json
+    format: json
+    list: true
+    fields:
+      - { name: question, label: Question, type: string, required: true }
+      - { name: answer, label: Answer, type: text, required: true }
+
+  - name: contact
+    label: Final Call to Action
+    type: file
+    path: src/_data/contact.json
+    format: json
+    fields:
+      - { name: label, label: Small heading, type: string }
+      - { name: headline, label: Headline, type: string }
+      - { name: description, label: Description, type: text }
+      - { name: button_text, label: Button text, type: string }
+      - { name: button_url, label: Button URL, type: string }
