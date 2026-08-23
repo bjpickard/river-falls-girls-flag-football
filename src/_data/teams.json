@@ -1,6 +1,26 @@
 [
-  { "age": "10U", "title": "Build the foundation", "description": "For developing players ready to strengthen their fundamentals and experience competitive tournament football.", "note": "Free evaluations" },
-  { "age": "12U", "title": "Expand the game", "description": "For players ready to grow their positional skills, football knowledge, and confidence within more advanced systems.", "note": "Free evaluations" },
-  { "age": "14U", "title": "Prepare for what’s next", "description": "For athletes ready for a faster level of play, more specialized roles, and preparation for high school opportunities.", "note": "Free evaluations" },
-  { "age": "HS", "title": "Keep competing", "description": "For high school athletes seeking advanced development and regional competition as the girls’ game continues to grow.", "note": "Free evaluations" }
+  {
+    "age": "10U",
+    "title": "Build the foundation",
+    "description": "For developing players ready to strengthen their fundamentals and experience competitive tournament football.",
+    "note": "Age 10 or younger on 8/1/26"
+  },
+  {
+    "age": "12U",
+    "title": "Expand the game",
+    "description": "For players ready to grow their positional skills, football knowledge, and confidence within more advanced systems.",
+    "note": "Age 12 or younger on 8/1/26"
+  },
+  {
+    "age": "14U",
+    "title": "Prepare for what’s next",
+    "description": "For athletes ready for a faster level of play, more specialized roles, and preparation for high school opportunities.",
+    "note": "Age 14 or younger on 8/1/26"
+  },
+  {
+    "age": "HS",
+    "title": "Keep competing",
+    "description": "For high school athletes seeking advanced development and regional competition as the girls’ game continues to grow.",
+    "note": "Age 17 or younger on 8/1/26"
+  }
 ]
