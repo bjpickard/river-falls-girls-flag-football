@@ -1,0 +1,180 @@
+---
+permalink: index.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ settings.site_name }}</title>
+  <meta name="description" content="{{ settings.description }}">
+  <meta name="theme-color" content="#061f3d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ settings.site_name }}">
+  <meta property="og:description" content="{{ settings.description }}">
+  <meta property="og:image" content="{{ hero.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{ settings.logo }}" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main id="top">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="mark" href="#top" aria-label="{{ settings.site_name }} home"><img class="site-logo" src="{{ settings.logo }}" alt="{{ settings.logo_alt }}"></a>
+        <nav aria-label="Primary navigation">
+          <a href="#about">About</a><a href="#teams">Teams</a><a href="#season">Season</a><a href="#coaches">Coaching</a><a href="#fees">Fees</a><a href="#faq">FAQ</a>
+        </nav>
+        <a class="button button-small" href="#contact">Get updates</a>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-lines" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{ hero.eyebrow }}</p>
+          <h1 id="hero-title">{{ hero.line_one }}<br>{{ hero.line_two }}<br><span>{{ hero.line_three }}</span></h1>
+          <p class="hero-intro">{{ hero.introduction }}</p>
+          <div class="button-row">
+            <a class="button" href="{{ hero.primary_link }}">{{ hero.primary_button }}</a>
+            <a class="text-link" href="{{ hero.secondary_link }}">{{ hero.secondary_button }} <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo-frame"><img src="{{ hero.image }}" alt="{{ hero.image_alt }}"></div>
+          <div class="hero-card">
+            <span class="hero-card-kicker">Inaugural club season</span><strong>2027</strong><div class="hero-card-rule"></div>
+            <p class="hero-card-meta"><span>{{ settings.age_divisions }}</span><span>{{ settings.location }}</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="score-strip" aria-label="Program principles">
+        {% for principle in hero.principles %}<span>{{ principle }}</span>{% if not loop.last %}<i></i>{% endif %}{% endfor %}
+      </div>
+    </section>
+
+    <section class="section intro-section" id="about">
+      <div class="shell split">
+        <div><p class="section-number">{{ about.section_label }}</p><h2>{{ about.headline }}</h2></div>
+        <div class="prose">
+          <p>{{ about.paragraph_one }}</p><p>{{ about.paragraph_two }}</p>
+          <a class="text-link dark" href="#values">Our coaching philosophy <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section organization-section" aria-label="Mission, vision, and program standard">
+      <div class="shell purpose-grid">
+        <article><span>Mission</span><p>{{ organization.mission }}</p></article>
+        <article><span>Vision</span><p>{{ organization.vision }}</p></article>
+      </div>
+    </section>
+
+    <section class="values-section" id="values">
+      <div class="shell">
+        <div class="values-heading"><div><p class="section-number light">More than a game.</p><h2>Paving a pathway.</h2></div></div>
+        <div class="value-grid">
+          {% for value in values %}<article><span>0{{ loop.index }}</span><h3>{{ value.title }}</h3><p>{{ value.description }}</p></article>{% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section teams-section" id="teams">
+      <div class="shell">
+        <div class="section-heading-row">
+          <div><p class="section-number">Age Divisions</p><h2>Find your team.</h2></div>
+        </div>
+        <div class="team-grid">
+          {% for team in teams %}<article class="team-card"><div class="age-badge">{{ team.age }}</div><h3>{{ team.title }}</h3><p>{{ team.description }}</p><span>{{ team.note }}</span></article>{% endfor %}
+        </div>
+        <p class="age-note">The club intends to use an August 1 age cutoff when possible. Final eligibility follows each tournament’s rules.</p>
+      </div>
+    </section>
+
+    <section class="season-section" id="season">
+      <div class="season-overview">
+        <div class="shell split">
+          <div><p class="section-number light">The season</p><h2>Structured for sustained success.</h2></div>
+          <div class="timeline">
+            {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
+          </div>
+        </div>
+        <div class="shell partner-note"><b>League partnership</b><p>Carbonite Sports registration is separate from River Falls Girls Flag Football club membership and does not guarantee selection for a club roster.</p></div>
+      </div>
+      <div class="season-practice">
+        <div class="shell season-details">
+          <div class="season-lead"><p class="section-number">Practice & competition</p><h2>{{ season.headline }}</h2><p>{{ season.introduction }}</p></div>
+          <div class="season-details-grid">
+            <article><h3>Purposeful practices</h3><p>{{ season.practices }}</p><ul>{% for item in season.practice_items %}<li>{{ item }}</li>{% endfor %}</ul></article>
+            <article><h3>Attendance & multi-sport athletes</h3><p>{{ season.attendance }}</p></article>
+            <article><h3>Playing time philosophy</h3><p>{{ season.playing_time }}</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coach-section" id="coaches">
+      <div class="shell coach-grid">
+        <div class="coach-photo"><img src="{{ coach.image }}" alt="{{ coach.image_alt }}"></div>
+        <div class="coach-content">
+ <div><p class="section-number light">Leadership</p>
+          <div class="coach-bio">
+          <p class="eyebrow gold">{{ coach.role }}</p><h2>{{ coach.name }}</h2>
+          <p>{{ coach.paragraph_one }}</p><p>{{ coach.paragraph_two }}</p><p>{{ coach.paragraph_three }}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="shell coaching-priorities">
+        <article><span>Player safety</span><p>{{ coach.safety }}</p></article>
+        <article><span>Mental performance</span><p>{{ coach.mental_performance }}</p></article>
+      </div>
+    </section>
+
+    <section class="section expectations-section" id="expectations">
+      <div class="shell">
+        <div class="section-heading-row"><div><p class="section-number">Expectations</p><h2>We do this together.</h2></div><p>The experience is strongest when coaches, players, and families reinforce the same standards.</p></div>
+        <div class="expectation-grid">{% for item in expectations %}<article><span>For {{ item.audience }}</span><h3>{{ item.headline }}</h3><p>{{ item.description }}</p></article>{% endfor %}</div>
+      </div>
+    </section>
+
+    <section class="fees-section" id="fees">
+      <div class="shell split">
+        <div><p class="section-number light">Fees & policies</p><h2>{{ policies.headline }}</h2><p class="fees-intro">{{ policies.introduction }}</p></div>
+        <div class="policy-content">
+          <article><h3>Core season expenses</h3><ul>{% for item in policies.included %}<li>{{ item }}</li>{% endfor %}</ul></article>
+          <article><h3>Travel and family expenses</h3><p>{{ policies.family_costs }}</p></article>
+          <article><h3>Financial assistance</h3><p>{{ policies.assistance }}</p></article>
+          <article><h3>Withdrawals and refunds</h3><p>{{ policies.refunds }}</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="shell split">
+        <div><p class="section-number">Good to know</p><h2>FAQ</h2></div>
+        <div class="faq-list">
+          {% for item in faqs %}<details{% if loop.first %} open{% endif %}><summary>{{ item.question }}<span aria-hidden="true">+</span></summary><p>{{ item.answer }}</p></details>{% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="shell contact-grid">
+        <div><p class="eyebrow gold">{{ contact.label }}</p><h2>{{ contact.headline }}</h2></div>
+        <div><p>{{ contact.description }}</p><a class="button" href="{{ contact.button_url }}">{{ contact.button_text }}</a></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell footer-grid">
+        <a class="mark footer-mark" href="#top" aria-label="{{ settings.site_name }} home"><img class="site-logo" src="{{ settings.logo }}" alt="{{ settings.logo_alt }}"></a>
+        <div><b>{{ settings.location }}</b><span>Competitive girls’ club flag football</span></div>
+        <div><b>{{ settings.age_divisions }}</b><span>{{ settings.launch_label }}</span></div>
+        <div><b>River Falls Girls Flag Football LLC</b><span>© {{ settings.copyright_year }} · All rights reserved</span></div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
