@@ -78,7 +78,7 @@ permalink: index.html
 
     <section class="values-section" id="values">
       <div class="shell">
-        <div class="values-heading"><div><p class="section-number light">More than tournament teams</p><h2>Football skills.<br>Life skills.</h2></div></div>
+        <div class="values-heading"><div><p class="section-number light">More than a game.</p><h2>Core benefits on the field.<br>Life-changing impacts off it.</h2></div></div>
         <div class="value-grid">
           {% for value in values %}<article><span>0{{ loop.index }}</span><h3>{{ value.title }}</h3><p>{{ value.description }}</p></article>{% endfor %}
         </div>
@@ -94,13 +94,6 @@ permalink: index.html
           {% for team in teams %}<article class="team-card"><div class="age-badge">{{ team.age }}</div><h3>{{ team.title }}</h3><p>{{ team.description }}</p><span>{{ team.note }}</span></article>{% endfor %}
         </div>
         <p class="age-note">The club intends to use an August 1 age cutoff when possible. Final eligibility follows each tournament’s rules.</p>
-      </div>
-    </section>
-
-    <section class="uniform-feature" aria-label="River Falls uniform concept">
-      <div class="shell">
-        <div class="uniform-copy"><p class="section-number light">{{ uniform.label }}</p><h2>{{ uniform.headline }}</h2><p>{{ uniform.description }}</p></div>
-        <img src="{{ uniform.image }}" alt="{{ uniform.image_alt }}">
       </div>
     </section>
 
