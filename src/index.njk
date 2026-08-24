@@ -83,7 +83,7 @@ permalink: index.html
     <section class="section teams-section" id="teams">
       <div class="shell">
         <div class="section-heading-row">
-          <div><p class="section-number">02 / Teams & evaluations</p><h2>Find your team.</h2></div>
+          <div><p class="section-number">Age Divisions</p><h2>Find your team.</h2></div>
         </div>
         <div class="team-grid">
           {% for team in teams %}<article class="team-card"><div class="age-badge">{{ team.age }}</div><h3>{{ team.title }}</h3><p>{{ team.description }}</p><span>{{ team.note }}</span></article>{% endfor %}
@@ -94,7 +94,7 @@ permalink: index.html
 
     <section class="section season-section" id="season">
       <div class="shell split">
-        <div><p class="section-number">03 / The season</p><h2>Structured for sustained success.</h2></div>
+        <div><p class="section-number">The season</p><h2>Structured for sustained success.</h2></div>
         <div class="timeline">
           {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
         </div>
@@ -114,7 +114,7 @@ permalink: index.html
       <div class="shell coach-grid">
         <div class="coach-photo"><img src="{{ coach.image }}" alt="{{ coach.image_alt }}"></div>
         <div class="coach-content">
- <div><p class="section-number light">04 / Leadership</p>
+ <div><p class="section-number light">Leadership</p>
           <div class="coach-bio">
           <p class="eyebrow gold">{{ coach.role }}</p><h2>{{ coach.name }}</h2>
           <p>{{ coach.paragraph_one }}</p><p>{{ coach.paragraph_two }}</p><p>{{ coach.paragraph_three }}</p>
@@ -129,7 +129,7 @@ permalink: index.html
 
     <section class="section expectations-section" id="expectations">
       <div class="shell">
-        <div class="section-heading-row"><div><p class="section-number">05 / Shared expectations</p><h2>Our part. Your part. One team.</h2></div><p>The experience is strongest when coaches, players, and families reinforce the same standards.</p></div>
+        <div class="section-heading-row"><div><p class="section-number">Expectations</p><h2>We do this together.</h2></div><p>The experience is strongest when coaches, players, and families reinforce the same standards.</p></div>
         <div class="expectation-grid">{% for item in expectations %}<article><span>For {{ item.audience }}</span><h3>{{ item.headline }}</h3><p>{{ item.description }}</p></article>{% endfor %}</div>
       </div>
     </section>
@@ -148,7 +148,7 @@ permalink: index.html
 
     <section class="section faq-section" id="faq">
       <div class="shell split">
-        <div><p class="section-number">07 / Good to know</p><h2>FAQ</h2></div>
+        <div><p class="section-number">Good to know</p><h2>FAQ</h2></div>
         <div class="faq-list">
           {% for item in faqs %}<details{% if loop.first %} open{% endif %}><summary>{{ item.question }}<span aria-hidden="true">+</span></summary><p>{{ item.answer }}</p></details>{% endfor %}
         </div>
