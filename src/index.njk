@@ -73,7 +73,7 @@ permalink: index.html
 
     <section class="values-section" id="values">
       <div class="shell">
-        <div class="values-heading"><div><p class="section-number light">More than a game.</p><h2>Core benefits on the field.<br>Life-changing impacts off it.</h2></div></div>
+        <div class="values-heading"><div><p class="section-number light">More than a game.</p><h2>Paving a pathway.</h2></div></div>
         <div class="value-grid">
           {% for value in values %}<article><span>0{{ loop.index }}</span><h3>{{ value.title }}</h3><p>{{ value.description }}</p></article>{% endfor %}
         </div>
@@ -148,7 +148,7 @@ permalink: index.html
 
     <section class="section faq-section" id="faq">
       <div class="shell split">
-        <div><p class="section-number">07 / Good to know</p><h2>Questions from families.</h2></div>
+        <div><p class="section-number">07 / Good to know</p><h2>FAQ</h2></div>
         <div class="faq-list">
           {% for item in faqs %}<details{% if loop.first %} open{% endif %}><summary>{{ item.question }}<span aria-hidden="true">+</span></summary><p>{{ item.answer }}</p></details>{% endfor %}
         </div>
