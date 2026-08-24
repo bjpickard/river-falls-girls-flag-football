@@ -115,16 +115,15 @@ permalink: index.html
     </section>
 
     <section class="coach-section" id="coaches">
+      <div class="shell coach-heading"><p class="section-number light">Leadership</p></div>
       <div class="shell coach-grid">
         <div class="coach-photo"><img src="{{ coach.image }}" alt="{{ coach.image_alt }}"></div>
         <div class="coach-content">
- <div><p class="section-number light">Leadership</p>
           <div class="coach-bio">
           <p class="eyebrow gold">{{ coach.role }}</p><h2>{{ coach.name }}</h2>
           <p>{{ coach.paragraph_one }}</p><p>{{ coach.paragraph_two }}</p><p>{{ coach.paragraph_three }}</p>
           </div>
         </div>
-      </div>
       </div>
       <div class="shell coaching-priorities">
         <article><span>Player safety</span><p>{{ coach.safety }}</p></article>
