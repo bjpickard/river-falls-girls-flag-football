@@ -45,7 +45,7 @@ permalink: index.html
           <div class="hero-photo-frame"><img src="{{ hero.image }}" alt="{{ hero.image_alt }}"></div>
           <div class="hero-card">
             <span class="hero-card-kicker">Inaugural club season</span><strong>2027</strong><div class="hero-card-rule"></div>
-            <p>{{ settings.age_divisions }}</p><p>Free player evaluations</p><p>{{ settings.location }}</p>
+            <p>{{ settings.age_divisions }}{{ settings.location }}</p>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ permalink: index.html
 
     <section class="section season-section" id="season">
       <div class="shell split">
-        <div><p class="section-number">03 / The player pathway</p><h2>One program.<br>A year-round path.</h2></div>
+        <div><p class="section-number">03 / The season</p><h2>A structure for<br>sustained success.</h2></div>
         <div class="timeline">
           {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
         </div>
