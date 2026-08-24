@@ -4,8 +4,8 @@
     "answer": "RFGF anticipates offering 10U, 12U, 14U, and high school teams for girls from River Falls and surrounding Western Wisconsin communities. Final age eligibility will follow the registration rules declared by each tournament."
   },
   {
-    "question": "Is there a tryout?",
-    "answer": "There will be a skills combine ahead of the season to place players based on age and ability."
+    "question": "How will teams be selected?",
+    "answer": "Depending on volume, there will be a skills combine ahead of the season to place players based on age and ability."
   },
   {
     "question": "What will coaches evaluate?",
@@ -16,6 +16,10 @@
     "answer": "No. Previous experience is helpful but not required. Skills developed through basketball, soccer, softball, volleyball, track and field, and other sports translate well to flag football."
   },
   {
+    "question": "What equipment do players need?",
+    "answer": "Players should expect to need a mouthguard, athletic clothing without pockets, and appropriate athletic shoes or plastic/rubber cleats. Metal cleats and jewelry are not permitted."
+  }
+  {
     "question": "Is this a recreational program?",
     "answer": "No. RFGF is a competitive club program. Player development remains central, but teams will prepare to compete in regional summer tournaments."
   },
@@ -25,7 +29,7 @@
   },
   {
     "question": "How many tournaments will teams play?",
-    "answer": "Each team is expected to participate in approximately four to six regional tournaments per year."
+    "answer": "Each team is expected to participate in approximately three to five regional tournaments per year, mostly in the late spring and summer months."
   },
   {
     "question": "Will every player receive playing time?",
@@ -37,22 +41,18 @@
   },
   {
     "question": "Can players participate in other sports?",
-    "answer": "Yes. RFGF supports and encourages multi-sport athletes! Families are expected to communicate conflicts in advance and make a reasonable effort to meet team practice and tournament commitments."
+    "answer": "Yes. RFGF completely supports and encourages multi-sport athletes! Families are expected to communicate conflicts in advance and make a reasonable effort to meet team practice and tournament commitments."
   },
   {
     "question": "What is the relationship with Carbonite Sports?",
     "answer": "Carbonite Sports is the official spring and fall league partner of River Falls Girls Flag Football. Carbonite provides local league opportunities, while River Falls Girls Flag Football operates competitive club teams that participate in regional summer tournaments. Registration and fees are currently separate."
   },
   {
-    "question": "Do players have to participate in Carbonite Sports to be evaluated?",
+    "question": "Do players have to participate in Carbonite Sports to be part of the team?",
     "answer": "No. Spring and fall participation through Carbonite Sports is encouraged as a valuable development opportunity, but it is separate from summer club team placement."
   },
   {
     "question": "How much will it cost?",
     "answer": "The inaugural season fee is still being developed. River Falls Girls Flag Football will charge one published season fee covering the core program and the tournament schedule."
   },
-  {
-    "question": "What equipment will players need?",
-    "answer": "Players should expect to need a mouthguard, athletic clothing without pockets, and appropriate athletic shoes or plastic/rubber cleats. Metal cleats and jewelry are not permitted."
-  }
 ]
