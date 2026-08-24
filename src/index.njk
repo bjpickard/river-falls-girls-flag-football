@@ -45,7 +45,7 @@ permalink: index.html
           <div class="hero-photo-frame"><img src="{{ hero.image }}" alt="{{ hero.image_alt }}"></div>
           <div class="hero-card">
             <span class="hero-card-kicker">Inaugural club season</span><strong>2027</strong><div class="hero-card-rule"></div>
-            <p>{{ settings.age_divisions }}{{ settings.location }}</p>
+            <p class="hero-card-meta"><span>{{ settings.age_divisions }}</span><span>{{ settings.location }}</span></p>
           </div>
         </div>
       </div>
@@ -92,20 +92,24 @@ permalink: index.html
       </div>
     </section>
 
-    <section class="section season-section" id="season">
-      <div class="shell split">
-        <div><p class="section-number">The season</p><h2>Structured for sustained success.</h2></div>
-        <div class="timeline">
-          {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
+    <section class="season-section" id="season">
+      <div class="season-overview">
+        <div class="shell split">
+          <div><p class="section-number light">The season</p><h2>Structured for sustained success.</h2></div>
+          <div class="timeline">
+            {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
+          </div>
         </div>
+        <div class="shell partner-note"><b>League partnership</b><p>Carbonite Sports registration is separate from River Falls Girls Flag Football club membership and does not guarantee selection for a club roster.</p></div>
       </div>
-      <div class="shell partner-note"><b>League partnership</b><p>Carbonite Sports registration is separate from River Falls Girls Flag Football club membership and does not guarantee selection for a club roster.</p></div>
-      <div class="shell season-details">
-        <div class="season-lead"><p class="section-number">Practice & competition</p><h2>{{ season.headline }}</h2><p>{{ season.introduction }}</p></div>
-        <div class="season-details-grid">
-          <article><h3>Purposeful practices</h3><p>{{ season.practices }}</p><ul>{% for item in season.practice_items %}<li>{{ item }}</li>{% endfor %}</ul></article>
-          <article><h3>Attendance & multi-sport athletes</h3><p>{{ season.attendance }}</p></article>
-          <article><h3>Playing time philosophy</h3><p>{{ season.playing_time }}</p></article>
+      <div class="season-practice">
+        <div class="shell season-details">
+          <div class="season-lead"><p class="section-number">Practice & competition</p><h2>{{ season.headline }}</h2><p>{{ season.introduction }}</p></div>
+          <div class="season-details-grid">
+            <article><h3>Purposeful practices</h3><p>{{ season.practices }}</p><ul>{% for item in season.practice_items %}<li>{{ item }}</li>{% endfor %}</ul></article>
+            <article><h3>Attendance & multi-sport athletes</h3><p>{{ season.attendance }}</p></article>
+            <article><h3>Playing time philosophy</h3><p>{{ season.playing_time }}</p></article>
+          </div>
         </div>
       </div>
     </section>
@@ -120,6 +124,7 @@ permalink: index.html
           <p>{{ coach.paragraph_one }}</p><p>{{ coach.paragraph_two }}</p><p>{{ coach.paragraph_three }}</p>
           </div>
         </div>
+      </div>
       </div>
       <div class="shell coaching-priorities">
         <article><span>Player safety</span><p>{{ coach.safety }}</p></article>
