@@ -1,0 +1,38 @@
+[
+  {
+    "tournament": "Jesse James Showdown",
+    "venue": "TCO Dome",
+    "location": "Lakeville, MN",
+    "date": "4/3/27"
+  },
+  {
+    "tournament": "Vikings Spring Regional",
+    "venue": "The Ponds Athletic Complex",
+    "location": "Prior Lake, MN",
+    "date": "TBD"
+  },
+  {
+    "tournament": "Packers Spring Regional",
+    "venue": "Don Hutson Center",
+    "location": "Ashwaubenon, WI",
+    "date": "TBD"
+  },
+  {
+    "tournament": "Battle of the North",
+    "venue": "National Sports Center",
+    "location": "Blaine, MN",
+    "date": "6/26/27"
+  },
+  {
+    "tournament": "Swamp Fox",
+    "venue": "Valley Sports Academy",
+    "location": "Eau Claire, WI",
+    "date": "TBD"
+  },
+  {
+    "tournament": "Midwest Flag Championships",
+    "venue": "Woodside Sports Complex",
+    "location": "Wisconsin Dells, WI",
+    "date": "7/17/27"
+  }
+]
