@@ -103,6 +103,19 @@ h2 { margin:0; color:var(--black); font-family:Impact,"Arial Narrow",sans-serif;
 .partner-note { margin-top:54px; padding:26px 32px; display:grid; grid-template-columns:180px 1fr; gap:30px; background:var(--pink); border-left:0; }
 .partner-note b { color:var(--black); text-transform:uppercase; font-size:12px; letter-spacing:.12em; }
 .partner-note p { margin:0; color:var(--black); line-height:1.6; }
+.season-schedule { padding:88px 0 94px; background:white; }
+.schedule-heading { display:grid; grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; margin-bottom:42px; }
+.schedule-heading h2 { font-size:clamp(48px,5.5vw,76px); }
+.schedule-heading>p { max-width:430px; margin:0 0 7px; color:#62585d; font-family:Georgia,serif; font-size:17px; line-height:1.65; }
+.schedule-table-wrap { overflow:hidden; border-top:8px solid var(--pink); box-shadow:0 16px 42px rgba(5,5,5,.09); }
+.schedule-table { width:100%; border-collapse:collapse; background:white; }
+.schedule-table th { padding:18px 22px; background:var(--black); color:white; font-size:11px; line-height:1.4; font-weight:900; letter-spacing:.14em; text-align:left; text-transform:uppercase; }
+.schedule-table td { padding:22px; border-bottom:1px solid var(--line); color:#62585d; font-family:Georgia,serif; font-size:15px; line-height:1.5; vertical-align:middle; }
+.schedule-table tbody tr:nth-child(even) { background:#fbf8fa; }
+.schedule-table tbody tr:last-child td { border-bottom:0; }
+.schedule-table td:first-child { color:var(--black); font-family:Arial,Helvetica,sans-serif; font-weight:800; }
+.schedule-date { color:#a82761!important; font-family:Arial,Helvetica,sans-serif!important; font-weight:900; white-space:nowrap; }
+.schedule-date-tbd { color:#746970!important; }
 .season-practice { padding:86px 0 96px; background:#f1e7ec; }
 .season-details { margin-top:0; padding-top:0; border-top:0; }
 .season-lead { display:grid; grid-template-columns:.65fr 1.35fr; grid-template-rows:auto auto; column-gap:60px; row-gap:24px; align-items:start; }
@@ -216,6 +229,16 @@ footer { padding:52px 0; background:#050505; color:white; }
   .uniform-feature img { border-width:5px; }
   .partner-note { grid-template-columns:1fr; gap:10px; }
   .season-overview { padding:76px 0 62px; }
+  .season-schedule { padding:70px 0 76px; }
+  .schedule-heading { grid-template-columns:1fr; gap:22px; margin-bottom:32px; }
+  .schedule-heading>p { margin:0; }
+  .schedule-table-wrap { overflow:visible; box-shadow:none; border-top:0; }
+  .schedule-table,.schedule-table tbody,.schedule-table tr,.schedule-table td { display:block; width:100%; }
+  .schedule-table thead { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .schedule-table tr { margin-bottom:16px; padding:18px 20px; background:white!important; border-top:5px solid var(--pink); box-shadow:0 10px 26px rgba(5,5,5,.08); }
+  .schedule-table tr:last-child { margin-bottom:0; }
+  .schedule-table td { display:grid; grid-template-columns:92px 1fr; gap:12px; padding:7px 0; border:0; font-size:14px; }
+  .schedule-table td::before { content:attr(data-label); color:#7f7078; font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
   .season-practice { padding:72px 0 78px; }
   .season-lead { grid-template-columns:1fr; gap:20px; }
   .season-lead .section-number,.season-lead h2,.season-lead>p:last-child { grid-column:1; grid-row:auto; }

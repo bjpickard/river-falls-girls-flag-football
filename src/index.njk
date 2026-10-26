@@ -102,6 +102,31 @@ permalink: index.html
         </div>
         <div class="shell partner-note"><b>League partnership</b><p>Carbonite Sports registration is separate from River Falls Girls Flag Football club membership and does not guarantee selection for a club roster.</p></div>
       </div>
+      <div class="season-schedule">
+        <div class="shell">
+          <div class="schedule-heading">
+            <div><p class="section-number">2027 Club Season</p><h2>Tournament schedule.</h2></div>
+            <p>Dates marked TBD will be added as soon as tournament organizers confirm them.</p>
+          </div>
+          <div class="schedule-table-wrap">
+            <table class="schedule-table">
+              <thead>
+                <tr><th scope="col">Tournament</th><th scope="col">Venue</th><th scope="col">Location</th><th scope="col">Date</th></tr>
+              </thead>
+              <tbody>
+                {% for event in schedule %}
+                <tr>
+                  <td data-label="Tournament">{{ event.tournament }}</td>
+                  <td data-label="Venue">{{ event.venue }}</td>
+                  <td data-label="Location">{{ event.location }}</td>
+                  <td data-label="Date" class="schedule-date{% if event.date == 'TBD' %} schedule-date-tbd{% endif %}">{{ event.date }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
       <div class="season-practice">
         <div class="shell season-details">
           <div class="season-lead"><p class="section-number">Preparation</p><h2>{{ season.headline }}</h2><p>{{ season.introduction }}</p></div>
