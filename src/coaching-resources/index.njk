@@ -1,0 +1,83 @@
+---
+permalink: /coaching-resources/index.html
+layout: coaching-base.njk
+title: Home
+description: A free, curated library of flag football resources for volunteer and veteran coaches.
+---
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow light">FREE COACHING RESOURCE LIBRARY</p>
+      <h1>COACH BETTER.<br><em>FIND HELP FASTER.</em></h1>
+      <p class="hero-lead">Playbooks, drills, practice tools, safety courses, and program-building resources—organized for coaches who already have enough on their plate.</p>
+      <div class="button-row">
+        <a class="button button-primary" href="/coaching-resources/library/">Explore the library <span aria-hidden="true">→</span></a>
+        <a class="button button-ghost" href="/coaching-resources/drills/">Find a drill</a>
+      </div>
+    </div>
+    <div class="hero-board" aria-label="Resource categories">
+      <div><strong>01</strong><span>Plan</span></div>
+      <div><strong>02</strong><span>Teach</span></div>
+      <div><strong>03</strong><span>Lead</span></div>
+      <div><strong>04</strong><span>Grow</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="wrap split-intro">
+    <div>
+      <p class="eyebrow">WHY THIS EXISTS</p>
+      <h2>{{ coachingSite.tagline }}</h2>
+    </div>
+    <div class="prose large">
+      <p>Whether you’re a first-time volunteer or a veteran coach, we’re all looking for ways to get better, work smarter, and be the best leaders we can be for our kids. That is often easier said than done—especially for parent-coaches.</p>
+      <p>The job extends well beyond the Xs and Os. We have to teach the basics and keep the game fun, encourage competition while maintaining perspective, and challenge athletes while ensuring they feel safe and supported.</p>
+      <p>This library brings useful resources together in one place so developing players can be the hard part—not finding help.</p>
+    </div>
+  </div>
+</section>
+
+<section class="category-section">
+  <div class="wrap">
+    <div class="section-heading">
+      <div><p class="eyebrow">START HERE</p><h2>WHAT DO YOU NEED?</h2></div>
+      <p>Browse by category or use the searchable library to find a specific topic.</p>
+    </div>
+    <div class="category-grid">
+      {% for category in coachingResources %}
+        <a class="category-card" href="/coaching-resources/{{ category.slug }}/">
+          <span class="category-number">0{{ loop.index }}</span>
+          <span class="category-eyebrow">{{ category.eyebrow }}</span>
+          <h3>{{ category.title }}</h3>
+          <p>{{ category.summary }}</p>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+      {% endfor %}
+      <a class="category-card category-featured" href="/coaching-resources/drills/">
+        <span class="category-number">08</span><span class="category-eyebrow">Build skills</span>
+        <h3>Drills</h3><p>Warmups, position work, flag pulling, routes, passing, catching, and more.</p><span class="card-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="category-card" href="/coaching-resources/development/">
+        <span class="category-number">09</span><span class="category-eyebrow">Keep growing</span>
+        <h3>Development</h3><p>Webinars, events, officiating resources, and the coaching bookshelf.</p><span class="card-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="principles-section">
+  <div class="wrap principles-grid">
+    <div><span>01</span><h3>Use what helps.</h3><p>Every team and every coach is different. Take the ideas that fit your athletes and your context.</p></div>
+    <div><span>02</span><h3>Keep it athlete-centered.</h3><p>The best resource is the one that helps players learn, compete, feel supported, and want to return.</p></div>
+    <div><span>03</span><h3>Share the good stuff.</h3><p>Know a resource that belongs here? Send it along so another coach can benefit.</p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap cta-inner">
+    <div><p class="eyebrow light">HELP BUILD THE LIBRARY</p><h2>FOUND SOMETHING<br>OTHER COACHES NEED?</h2></div>
+    <div><p>Suggest a tool, drill, course, or guide—or let us know what you are trying to find.</p><a class="button button-primary" href="mailto:{{ coachingSite.email }}?subject=Coaching%20resource%20suggestion">Email {{ coachingSite.email }}</a></div>
+  </div>
+</section>

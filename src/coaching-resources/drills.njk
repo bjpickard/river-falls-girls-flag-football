@@ -1,0 +1,40 @@
+---
+layout: coaching-base.njk
+title: Drills
+description: Flag football drills for warmups, snapping, running, passing, catching, and defense.
+permalink: /coaching-resources/drills/index.html
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow light">BUILD SKILLS WITH PURPOSE</p>
+    <h1>DRILLS</h1>
+    <p>Find a drill, see it demonstrated, and bring it to your next practice.</p>
+  </div>
+</section>
+<section class="resource-page" data-resource-scope>
+  <div class="wrap">
+    <div class="resource-toolbar">
+      <label><span class="sr-only">Search drills</span><input type="search" placeholder="Search drills…" data-resource-search></label>
+      <span data-resource-count></span>
+    </div>
+    <div class="jump-links" aria-label="Drill categories">
+      {% for group in coachingDrills %}<a href="#{{ group.title | slugify }}">{{ group.title }}</a>{% endfor %}
+    </div>
+    {% for group in coachingDrills %}
+      <section class="resource-group" id="{{ group.title | slugify }}">
+        <div class="group-heading"><p class="eyebrow">DRILL CATEGORY</p><h2>{{ group.title }}</h2></div>
+        <div class="resource-grid drill-grid">
+          {% for item in group.items %}
+            <a class="resource-card drill-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.source }} {{ group.title }}">
+              <span class="play-icon" aria-hidden="true">▶</span>
+              <span class="resource-type">{{ item.source }}</span>
+              <h3>{{ item.title }}</h3>
+              <span class="resource-link">Watch drill <span aria-hidden="true">↗</span></span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+    <p class="empty-state" data-empty-state hidden>No matching drills found. Try a broader search.</p>
+  </div>
+</section>

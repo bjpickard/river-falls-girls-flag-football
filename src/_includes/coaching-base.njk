@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ description or coachingSite.description }}">
+    <meta name="theme-color" content="#111111">
+    <title>{% if title %}{{ title }} | {% endif %}{{ coachingSite.name }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/coaching.css">
+    <script src="/assets/coaching.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/coaching-resources/" aria-label="{{ coachingSite.name }} home">
+          <span class="brand-mark" aria-hidden="true"><span>6</span></span>
+          <span class="brand-copy"><strong>PICK SIX</strong><small>COACHING RESOURCES</small></span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span><span class="sr-only">Menu</span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Coaching resources navigation">
+          <a href="/" class="rfgf-link">RFGF Home</a>
+          {% for item in coachingNavigation %}
+            <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endfor %}
+          <a class="nav-contact" href="mailto:{{ coachingSite.email }}">Suggest a resource</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <a class="brand footer-brand" href="/coaching-resources/">
+            <span class="brand-mark" aria-hidden="true"><span>6</span></span>
+            <span class="brand-copy"><strong>PICK SIX</strong><small>COACHING RESOURCES</small></span>
+          </a>
+          <p>Practical tools to help coaches work smarter, lead well, and build better experiences for athletes.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <a href="/coaching-resources/library/">Resource Library</a>
+          <a href="/coaching-resources/drills/">Drills</a>
+          <a href="/coaching-resources/development/">Development</a>
+          <a href="/coaching-resources/advocacy/">Advocacy</a>
+        </div>
+        <div>
+          <h2>Connect</h2>
+          {% for link in coachingSite.partnerLinks %}<a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }}</a>{% endfor %}
+          <a href="mailto:{{ coachingSite.email }}">{{ coachingSite.email }}</a>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© 2026 Pick Six Coaching Resources</span>
+        <span>Links open resources from their original publishers.</span>
+      </div>
+    </footer>
+  </body>
+</html>

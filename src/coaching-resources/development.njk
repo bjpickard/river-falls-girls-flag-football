@@ -1,0 +1,67 @@
+---
+layout: coaching-base.njk
+title: Development
+description: Coaching webinars, event archives, officiating resources, and recommended books.
+permalink: /coaching-resources/development/index.html
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow light">KEEP LEARNING. KEEP GROWING.</p>
+    <h1>DEVELOPMENT</h1>
+    <p>Long-form learning, clinics, event references, officiating education, and books worth keeping nearby.</p>
+  </div>
+</section>
+
+<section class="resource-page" data-resource-scope>
+  <div class="wrap">
+    <div class="resource-toolbar">
+      <label><span class="sr-only">Search development resources</span><input type="search" placeholder="Search development resources…" data-resource-search></label>
+      <span data-resource-count></span>
+    </div>
+
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">WATCH & LEARN</p><h2>Webinars & Clinics</h2></div>
+      <div class="resource-grid">
+        {% for item in coachingDevelopment.learning %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} webinar clinic">
+            <span class="resource-type">Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resource-group archive-group">
+      <div class="group-heading"><p class="eyebrow">REFERENCE</p><h2>2026 Event Archive</h2><p>Past listings retained as planning references. Replace these entries in <code>src/_data/coachingDevelopment.json</code> when new dates are announced.</p></div>
+      <div class="event-list">
+        {% for item in coachingDevelopment.events %}
+          <a class="event-row" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.date }} {{ item.details }} event tournament camp clinic">
+            <span class="event-date">{{ item.date }}</span><span><strong>{{ item.title }}</strong><small>{{ item.details }}</small></span><span aria-hidden="true">↗</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">THE THIRD TEAM</p><h2>Officiating</h2></div>
+      <div class="resource-grid">
+        {% for item in coachingDevelopment.officiating %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.details }} officiating referee">
+            <span class="resource-type">Officiating</span><h3>{{ item.title }}</h3>{% if item.details %}<p>{{ item.details }}</p>{% endif %}<span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">BOOKSHELF</p><h2>Recommended Reading</h2></div>
+      <div class="resource-grid book-grid">
+        {% for item in coachingDevelopment.books %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} book reading">
+            <span class="resource-type">Book</span><h3>{{ item.title }}</h3><span class="resource-link">View book <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    <p class="empty-state" data-empty-state hidden>No matching development resources found. Try a broader search.</p>
+  </div>
+</section>

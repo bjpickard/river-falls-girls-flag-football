@@ -1,0 +1,66 @@
+---
+layout: coaching-base.njk
+title: Resource Library
+description: Search the complete Pick Six Coaching resource library.
+permalink: /coaching-resources/library/index.html
+---
+<section class="page-hero page-hero-library">
+  <div class="wrap">
+    <p class="eyebrow light">EVERY RESOURCE. ONE SEARCH.</p>
+    <h1>RESOURCE LIBRARY</h1>
+    <p>Search playbooks, manuals, tools, tips, courses, apps, drills, development, and advocacy resources.</p>
+  </div>
+</section>
+<section class="resource-page" data-resource-scope>
+  <div class="wrap">
+    <div class="resource-toolbar sticky-toolbar">
+      <label><span class="sr-only">Search all resources</span><input type="search" placeholder="What are you looking for?" data-resource-search autofocus></label>
+      <span data-resource-count></span>
+    </div>
+    {% for category in coachingResources %}
+      <section class="resource-group">
+        <div class="group-heading"><p class="eyebrow">{{ category.eyebrow }}</p><h2><a href="/coaching-resources/{{ category.slug }}/">{{ category.title }}</a></h2></div>
+        <div class="resource-grid">
+          {% for group in category.groups %}{% for item in group.items %}
+            <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.type }} {{ group.title }} {{ category.title }}">
+              <span class="resource-type">{{ category.title }} · {{ item.type or "Resource" }}</span>
+              <h3>{{ item.title }}</h3>
+              <span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+            </a>
+          {% endfor %}{% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">BUILD SKILLS</p><h2><a href="/coaching-resources/drills/">Drills</a></h2></div>
+      <div class="resource-grid">
+        {% for group in coachingDrills %}{% for item in group.items %}
+          <a class="resource-card drill-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.source }} {{ group.title }} drills">
+            <span class="resource-type">Drills · {{ group.title }}</span><h3>{{ item.title }}</h3><span class="resource-link">Watch drill <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}{% endfor %}
+      </div>
+    </section>
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">KEEP GROWING</p><h2><a href="/coaching-resources/development/">Development</a></h2></div>
+      <div class="resource-grid">
+        {% for item in coachingDevelopment.learning %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} development webinar clinic">
+            <span class="resource-type">Development · Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+        {% for item in coachingDevelopment.officiating %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.details }} development officiating referee">
+            <span class="resource-type">Development · Officiating</span><h3>{{ item.title }}</h3><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+        {% for item in coachingDevelopment.books %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} development book reading">
+            <span class="resource-type">Development · Book</span><h3>{{ item.title }}</h3><span class="resource-link">View book <span aria-hidden="true">↗</span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    <p class="empty-state" data-empty-state hidden>No matching resources found. Try a broader search.</p>
+  </div>
+</section>

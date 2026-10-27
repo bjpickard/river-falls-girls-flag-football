@@ -1,0 +1,13 @@
+{
+  "name": "Pick Six Coaching Resources",
+  "shortName": "Pick Six",
+  "tagline": "Coaching is hard. Finding help shouldn't be.",
+  "description": "A curated library of flag football playbooks, drills, practice tools, coaching tips, certifications, and program-development resources.",
+  "email": "bj@pick6scouting.com",
+  "pickSixUrl": "https://www.pick6scouting.com/",
+  "partnerLinks": [
+    { "name": "Pick-6 Scouting", "url": "https://www.pick6scouting.com/" },
+    { "name": "NFL FLAG", "url": "https://nflflag.com/" },
+    { "name": "USA Football", "url": "https://usafootball.com/" }
+  ]
+}

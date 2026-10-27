@@ -1,0 +1,43 @@
+---
+layout: coaching-base.njk
+pagination:
+  data: coachingResources
+  size: 1
+  alias: category
+permalink: "/coaching-resources/{{ category.slug }}/index.html"
+eleventyComputed:
+  title: "{{ category.title }}"
+  description: "{{ category.summary }}"
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow light">{{ category.eyebrow }}</p>
+    <h1>{{ category.title }}</h1>
+    <p>{{ category.summary }}</p>
+  </div>
+</section>
+
+<section class="resource-page" data-resource-scope>
+  <div class="wrap">
+    <div class="resource-toolbar">
+      <label><span class="sr-only">Search {{ category.title }}</span><input type="search" placeholder="Search {{ category.title | lower }}…" data-resource-search></label>
+      <span data-resource-count></span>
+    </div>
+    {% for group in category.groups %}
+      <section class="resource-group">
+        <div class="group-heading"><p class="eyebrow">{{ category.title }}</p><h2>{{ group.title }}</h2></div>
+        <div class="resource-grid">
+          {% for item in group.items %}
+            <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.type }} {{ group.title }}">
+              <span class="resource-type">{{ item.type or "Resource" }}</span>
+              <h3>{{ item.title }}</h3>
+              {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+              <span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+    <p class="empty-state" data-empty-state hidden>No matching resources found. Try a broader search.</p>
+  </div>
+</section>

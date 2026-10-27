@@ -1,0 +1,223 @@
+[
+  {
+    "slug": "playbooks",
+    "title": "Playbooks",
+    "eyebrow": "Schemes & systems",
+    "summary": "Ready-to-use flag football concepts from trusted national organizations.",
+    "groups": [
+      {
+        "title": "Playbooks",
+        "items": [
+          { "title": "NFL FLAG Playbook", "url": "https://nflflag.mediavalet.com/galleries/732f0bc9-0a69-4f31-8c85-09524ee812c1_67465f9a-7b4b-4c15-b579-408d63fd4fee-ExternalUser/ad09c48f-f774-4343-a48e-8db4f58d5067", "type": "Playbook" },
+          { "title": "USA Football Base", "url": "https://fdm.usafootball.com/docs/default-source/league-resources/enrollment-resources/flag-football-playbook-split-strong-i-formation.pdf?sfvrsn=a49dd8ee_4", "type": "PDF" },
+          { "title": "USA Football Spread", "url": "https://fdm.usafootball.com/docs/default-source/league-resources/enrollment-resources/flag-football-playbook---spread-trips-stack.pdf?sfvrsn=593b7f76_2", "type": "PDF" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "manuals",
+    "title": "Manuals",
+    "eyebrow": "Guides & curricula",
+    "summary": "Rules, coaching handbooks, school curricula, program-building guides, and safety resources.",
+    "groups": [
+      {
+        "title": "Coaches",
+        "items": [
+          { "title": "NFL FLAG Rulebook", "url": "https://cdn.mediavalet.com/usca/rcx/DgBtnnoMFUCXWCBQE3YN2w/XMiAtpBTH0er4fUrKeYJAQ/Original/NFL_Flag_Rulebook_21423.pdf", "type": "PDF" },
+          { "title": "49ers PREP Coach’s Handbook", "url": "https://cdn1.sportngin.com/attachments/document/39ed-3159203/Coach__-_PREP_Flag_Football_Handbook_for_coach_s.pdf", "type": "PDF" },
+          { "title": "NFL Way to Play Coaches Guide", "url": "https://heyzine.com/flip-book/71c612d95c.html#page/1", "type": "Guide" },
+          { "title": "Quick Field Rules", "url": "https://drive.google.com/file/d/19YO5EYXcp9a-AXzC9F9NxtFiOR5YvzjF/view?usp=drive_link", "type": "Google Drive" }
+        ]
+      },
+      {
+        "title": "Parents",
+        "items": [
+          { "title": "USA Football Parent/Guardian Guide", "url": "https://guides.usafootball.com/5593/54847/index.html", "type": "Guide" },
+          { "title": "A Parent’s Guide to Helping Their Daughter Succeed", "url": "https://www.dhflagfootball.com/a-parents-guide-to-helping-their-daughter-succeed", "type": "Article" },
+          { "title": "USA Football: 60 Ways to Play", "url": "https://drive.google.com/file/d/173iTLH9mBzXzDw5bRc6I2fuUn3MTPS20/view?usp=drive_link", "type": "Google Drive" }
+        ]
+      },
+      {
+        "title": "Schools",
+        "items": [
+          { "title": "NFL FLAG High School Curriculum", "url": "https://drive.google.com/file/d/1Sbs-U4ON8vxzHuLMlig-Fs9Uy6Mg8U66/view?usp=drive_link", "type": "Curriculum" },
+          { "title": "NFL FLAG Middle School Curriculum", "url": "https://drive.google.com/file/d/1PSlH7myoc8dNsqkIeBuy0DPxYFqZIeUd/view?usp=drive_link", "type": "Curriculum" },
+          { "title": "NFL FLAG Elementary School Curriculum", "url": "https://drive.google.com/file/d/14fDJ6H-MYs2RN_bsckPm1DrOgk30tCac/view?usp=drive_link", "type": "Curriculum" },
+          { "title": "NFHS High School Rules", "url": "https://nfhs.org/sports/flag-football/rules", "type": "Rules" }
+        ]
+      },
+      {
+        "title": "Program Building",
+        "items": [
+          { "title": "USA Football: Building a Girls Program", "url": "https://guides.usafootball.com/5593/132572/index.html", "type": "Guide" },
+          { "title": "NAIA Sports Sponsorship Start-Up Guide", "url": "https://media.sportstravelmagazine.com/wp-content/uploads/2020/05/10034524/SS360_Start_Up_Guide_Women-s_Flag_Footballl_V3.pdf", "type": "PDF" }
+        ]
+      },
+      {
+        "title": "Health & Safety",
+        "items": [
+          { "title": "Resilience Training Toolkit", "url": "https://positivecoach.org/wp-content/uploads/PCA-Resilience-Training-Toolkit_Final.pdf", "type": "PDF" },
+          { "title": "Coaches’ Guide to Supporting Athlete Mental Health", "url": "https://positivecoach.org/wp-content/uploads/The-Coaches-Guide-to-Supporting-HS-Athlete-Mental-Health.pdf", "type": "PDF" },
+          { "title": "USA Football Heat & Hydration Guide", "url": "https://assets.usafootball.com/documents/Heat_Hydration_Resources.pdf", "type": "PDF" },
+          { "title": "Abuse & Misconduct Toolkit", "url": "https://eptoolkit.uscenterforsafesport.org/", "type": "Toolkit" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tools",
+    "title": "Tools",
+    "eyebrow": "Plan & organize",
+    "summary": "Practice plans, rotation charts, rosters, stat sheets, and budgeting templates.",
+    "groups": [
+      {
+        "title": "Coach Tools",
+        "items": [
+          { "title": "GoRout Blank Practice Plan", "url": "https://22027632.fs1.hubspotusercontent-na1.net/hubfs/22027632/Blank%20Football%20Practice%20Plan.pdf", "type": "Template" },
+          { "title": "Sample Practice Plan", "url": "https://cdn1.sportngin.com/attachments/document/84b8-3391068/Weekly_Flag_Football_Practice_Plan_Guide.pdf", "type": "PDF" },
+          { "title": "MOJO Practice Planner", "url": "https://mojo.sport/coachs-corner/how-to-create-and-edit-a-practice-on-mojo/", "type": "Planner" },
+          { "title": "NFL FLAG Rotation Chart", "url": "https://cdn1.sportngin.com/attachments/document/7d54-3192892/Player_Rotation_Chart_12_Players.pdf", "type": "PDF" },
+          { "title": "NFL FLAG Substitution Chart", "url": "https://cdn1.sportngin.com/attachments/document/691f-2913907/Substitution_chart.pdf", "type": "PDF" },
+          { "title": "Game Day Roster Template", "url": "https://docs.google.com/spreadsheets/d/11rcQzfl2pFdJHbFDryrmwwAGBM6UKBzr/edit?usp=sharing&ouid=113098319409164372657&rtpof=true&sd=true", "type": "Spreadsheet" },
+          { "title": "Flag Football Stat Sheet", "url": "https://drive.google.com/file/d/1CzhctWfyY27SklGAbEjRoTLi-VbUSVYW/view?usp=drive_link", "type": "Template" },
+          { "title": "Flag Football Budget Template", "url": "https://docs.google.com/spreadsheets/d/1ZObpgr4MmXHoCaP4kd6fsFg7CMlF8zRi/edit?usp=drive_link&ouid=113098319409164372657&rtpof=true&sd=true", "type": "Spreadsheet" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tips",
+    "title": "Tips",
+    "eyebrow": "Lead people well",
+    "summary": "Practical guidance for coaches, parents, and athletes—on and off the field.",
+    "groups": [
+      {
+        "title": "For Coaches",
+        "items": [
+          { "title": "16 Tips for the First-Time Coach", "url": "https://positivecoach.org/wp-content/uploads/16-Tips-for-the-First-Time-Coach.pdf", "type": "PDF" },
+          { "title": "7 Biggest Mistakes Youth Sports Coaches Make", "url": "https://cdn1.sportngin.com/attachments/document/0067/9927/7-biggest-mistakes.pdf", "type": "PDF" },
+          { "title": "Yes, You Need to Write a Welcome Letter", "url": "https://mojo.sport/coachs-corner/yes-you-need-to-a-write-a-welcome-letter/", "type": "Article" },
+          { "title": "Remember Their Names", "url": "https://mojo.sport/coachs-corner/how-on-earth-are-you-going-to-remember-their-names/", "type": "Article" },
+          { "title": "The Power of Positive Coaching", "url": "https://mojo.sport/coachs-corner/the-power-of-positive-coaching/", "type": "Article" },
+          { "title": "Coach the Person, Not the Player", "url": "https://playerdevelopmentproject.com/coach-the-person-not-the-player/", "type": "Article" },
+          { "title": "Age-Appropriate Coaching Strategies", "url": "https://drive.google.com/file/d/12ScSLNm4ACUL0ogamVAtChS7kA9vJseS/view?usp=sharing", "type": "Guide" },
+          { "title": "Coaching in Blowouts", "url": "https://drive.google.com/file/d/1ExFLRyZWFaREyrR9mgbzNCjZ2Mty4kGY/view?usp=sharing", "type": "Guide" },
+          { "title": "11 Tips for Coaching Kids with ADHD", "url": "https://www.ownbeatathlete.com/11-tips-for-coaching-athletes-with-adhd", "type": "Article" },
+          { "title": "Coaching Players of Different Abilities", "url": "https://mojo.sport/coachs-corner/3-tips-for-coaching-players-of-different-abilities/", "type": "Article" },
+          { "title": "Managing Challenging Behavior in Youth Sports", "url": "https://youtu.be/3ZGEOKh6Yhg?si=MxaBxi7mFhSntr3y", "type": "Video" },
+          { "title": "Working with Parents", "url": "https://playfootball.nfl.com/coaches/working-with-parents/", "type": "Article" },
+          { "title": "Five Fundamentals to Keep Girls in Sports", "url": "https://drive.google.com/file/d/15YbuI3IQYYp76rUNZRkeAOpUPGkmNjln/view?usp=sharing", "type": "Guide" },
+          { "title": "Challenging Gender Stereotypes", "url": "https://drive.google.com/file/d/1VbSdQUdgM9zfZ62DHO-f-ko2JP5I-zkS/view?usp=sharing", "type": "Guide" }
+        ]
+      },
+      {
+        "title": "For Parents",
+        "items": [
+          { "title": "Parent Checklists", "url": "https://discover.sportsengineplay.com/term/parent-checklist", "type": "Checklist" },
+          { "title": "Communicating with Coaches", "url": "https://www.teamsnap.com/blog/general-sports/how-to-communicate-with-your-childs-coach", "type": "Article" },
+          { "title": "The Car Ride Home", "url": "https://youtu.be/ib59xIjoUeA?si=OHvRVCSBGRaXm9hN", "type": "Video" },
+          { "title": "How Parents Keep Girls in Sport for Life", "url": "https://drive.google.com/file/d/18f3nmZY1mToSEzU90Ika1JQ2yt5I7vP-/view?usp=drive_link", "type": "Guide" }
+        ]
+      },
+      {
+        "title": "For Athletes",
+        "items": [
+          { "title": "Building Habits That Last", "url": "https://www.youtube.com/watch?v=OuTx4F_Tnxw", "type": "Video" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certifications",
+    "title": "Certifications",
+    "eyebrow": "Keep learning",
+    "summary": "Courses that strengthen safety, leadership, sportsmanship, and athlete support.",
+    "groups": [
+      {
+        "title": "Featured Training",
+        "items": [
+          { "title": "Coaching HER", "url": "https://learn.coachingher.com/", "type": "Course" }
+        ]
+      },
+      {
+        "title": "NFHS Virtual Courses",
+        "items": [
+          { "title": "Sportsmanship", "url": "https://nfhslearn.com/courses/sportsmanship-2", "type": "Course" },
+          { "title": "Developing Youth Through Sport", "url": "https://nfhslearn.com/courses/developing-youth-through-sport", "type": "Course" },
+          { "title": "Coaching Mental Wellness", "url": "https://nfhslearn.com/courses/coaching-mental-wellness", "type": "Course" },
+          { "title": "Concussion in Sports", "url": "https://nfhslearn.com/courses/concussion-in-sports-2", "type": "Course" },
+          { "title": "Sudden Cardiac Arrest", "url": "https://nfhslearn.com/courses/sudden-cardiac-arrest", "type": "Course" },
+          { "title": "Protecting Students from Abuse", "url": "https://nfhslearn.com/courses/protecting-students-from-abuse", "type": "Course" },
+          { "title": "The Parent Seat", "url": "https://nfhslearn.com/courses/the-parent-seat", "type": "Course" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "apps",
+    "title": "Apps",
+    "eyebrow": "Coach from anywhere",
+    "summary": "Digital tools for practice planning, play design, game-day organization, and statistics.",
+    "groups": [
+      {
+        "title": "Coach Apps",
+        "items": [
+          { "title": "MOJO", "url": "https://nflflag.com/partners/mojo", "type": "Practice Planning" },
+          { "title": "Playmaker X", "url": "https://www.flagfootballplaymaker.com/app/", "type": "Play Design" },
+          { "title": "Football Play Card", "url": "https://footballplaycard.com/", "type": "Play Cards" },
+          { "title": "FlagStats", "url": "https://www.flagfootballstats.com/", "type": "Statistics" },
+          { "title": "USA Football Coach Planner", "url": "https://fdm.usafootball.com/coaches/coach-resources/coach-planner-app", "type": "Planning" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "advocacy",
+    "title": "Advocacy",
+    "eyebrow": "Grow the game",
+    "summary": "Start-up guides, letter templates, grants, participation data, and officiating pathways.",
+    "groups": [
+      {
+        "title": "Start-Up & Resource Guides",
+        "items": [
+          { "title": "NFL FLAG: Chase Something Bigger", "url": "https://nflflag.com/girls-flag-football/high-school", "type": "Guide" },
+          { "title": "Girls Flag Football Resource Guide", "url": "https://docs.google.com/presentation/d/1VmaBC0o4L8OfLMd1E4gCs075vjegTsJoo-FbpiS0b10/present", "type": "Presentation" }
+        ]
+      },
+      {
+        "title": "Letter Templates",
+        "items": [
+          { "title": "Student Letter Template — Minnesota", "url": "https://static.clubs.nfl.com/image/upload/vikings/gkqkjpsdf2k08s1fnwyl.pdf", "type": "PDF" },
+          { "title": "Parent Letter Template — Minnesota", "url": "https://static.clubs.nfl.com/image/upload/vikings/wywhx70arxvukcgzgqyf.pdf", "type": "PDF" }
+        ]
+      },
+      {
+        "title": "Grant & Information Requests",
+        "items": [
+          { "title": "Green Bay Packers Interest Report", "url": "https://packers.formstack.com/forms/wisconsin_girls_flag_football", "type": "Form" },
+          { "title": "Minnesota Vikings Information Request", "url": "https://minnesotavikings.formstack.com/forms/girls_flag_football_information_request", "type": "Form" },
+          { "title": "Green Bay Packers Grant Application", "url": "https://packers.formstack.com/forms/girls_flag_grant", "type": "Form" },
+          { "title": "Minnesota Vikings Grant Application", "url": "https://minnesotavikings.formstack.com/forms/2026_minnesota_high_school_girls_flag_league_grant_application?persistUserId=V20bf39542ba1c0ed", "type": "Form" }
+        ]
+      },
+      {
+        "title": "Participation Data",
+        "items": [
+          { "title": "Minnesota Vikings Girls Flag League", "url": "https://static.clubs.nfl.com/image/upload/vikings/xrvgaqb55w1tdlbh7snp.pdf", "type": "PDF" },
+          { "title": "Illinois High School Association Entries", "url": "https://ihsa-assets-prod.nyc3.digitaloceanspaces.com/documents/girls-flag-football/2025-26/anticipated-entries-for-the-fall-2025-and-2026-seasons.pdf", "type": "PDF" },
+          { "title": "Collegiate Sponsorship Database", "url": "https://www.collegiateflagfootball.com/college-flag-football-teams/", "type": "Database" }
+        ]
+      },
+      {
+        "title": "Become an Official",
+        "items": [
+          { "title": "NFL FLAG Referee Registry & Training", "url": "https://nflflag.com/officiating", "type": "Training" },
+          { "title": "NFHS Officiating Application", "url": "https://highschoolofficials.com/", "type": "Application" },
+          { "title": "Say Yes to Officiating", "url": "https://www.sayyestoofficiating.com/become-a-sports-official/sports/football/", "type": "Information" },
+          { "title": "USA Football Officials Certification", "url": "https://footballdevelopment.com/officials-certification/", "type": "Certification" }
+        ]
+      }
+    ]
+  }
+]
