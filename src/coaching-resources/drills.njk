@@ -25,7 +25,9 @@ permalink: /coaching-resources/drills/index.html
         <div class="group-heading"><p class="eyebrow">DRILL CATEGORY</p><h2>{{ group.title }}</h2></div>
         <div class="resource-grid drill-grid">
           {% for item in group.items %}
+            {% set videoThumbnail = item.url | youtubeThumbnail %}
             <a class="resource-card drill-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.source }} {{ group.title }}">
+              {% if videoThumbnail %}<span class="resource-media"><img src="{{ videoThumbnail }}" alt="Video preview for {{ item.title }}" loading="lazy"></span>{% endif %}
               <span class="play-icon" aria-hidden="true">▶</span>
               <span class="resource-type">{{ item.source }}</span>
               <h3>{{ item.title }}</h3>

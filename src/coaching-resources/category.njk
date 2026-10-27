@@ -29,6 +29,7 @@ eleventyComputed:
         <div class="resource-grid">
           {% for item in group.items %}
             <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.type }} {{ group.title }}">
+              {% if item.preview %}<span class="resource-media"><img src="{{ item.preview }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% endif %}
               <span class="resource-type">{{ item.type or "Resource" }}</span>
               <h3>{{ item.title }}</h3>
               {% if item.description %}<p>{{ item.description }}</p>{% endif %}

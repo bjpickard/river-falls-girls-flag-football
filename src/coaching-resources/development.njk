@@ -23,7 +23,9 @@ permalink: /coaching-resources/development/index.html
       <div class="group-heading"><p class="eyebrow">WATCH & LEARN</p><h2>Webinars & Clinics</h2></div>
       <div class="resource-grid">
         {% for item in coachingDevelopment.learning %}
+          {% set videoThumbnail = item.url | youtubeThumbnail %}
           <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} webinar clinic">
+            {% if item.preview %}<span class="resource-media"><img src="{{ item.preview }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% elif videoThumbnail %}<span class="resource-media"><img src="{{ videoThumbnail }}" alt="Video preview for {{ item.title }}" loading="lazy"></span>{% endif %}
             <span class="resource-type">Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
