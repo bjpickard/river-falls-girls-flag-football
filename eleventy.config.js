@@ -13,6 +13,19 @@ export default function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("documentThumbnail", (value = "") => {
+    try {
+      const url = new URL(value);
+      if (!url.hostname.includes("google.com")) return "";
+
+      const pathMatch = url.pathname.match(/\/(?:file|document|presentation|spreadsheets)\/d\/([^/]+)/);
+      const id = pathMatch?.[1] || url.searchParams.get("id") || "";
+      return id ? `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w800` : "";
+    } catch {
+      return "";
+    }
+  });
+
   eleventyConfig.addPassthroughCopy({ "src/styles.css": "styles.css" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });

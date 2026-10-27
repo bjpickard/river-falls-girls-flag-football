@@ -23,7 +23,13 @@ permalink: /coaching-resources/library/index.html
         <div class="resource-grid">
           {% for group in category.groups %}{% for item in group.items %}
             <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.type }} {{ group.title }} {{ category.title }}">
-              {% if item.preview %}<span class="resource-media"><img src="{{ item.preview }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% endif %}
+              {% set videoThumbnail = item.url | youtubeThumbnail %}
+              {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
+              {% if previewImage %}
+                <span class="resource-media"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>
+              {% else %}
+                <span class="resource-media resource-media-document" aria-hidden="true"><span>{{ item.type or "Resource" }}</span><strong>{{ item.title }}</strong></span>
+              {% endif %}
               <span class="resource-type">{{ category.title }} · {{ item.type or "Resource" }}</span>
               <h3>{{ item.title }}</h3>
               <span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
