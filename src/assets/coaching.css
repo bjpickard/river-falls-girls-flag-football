@@ -1,8 +1,12 @@
 :root {
   --ink: #050505;
   --ink-soft: #171217;
-  --red: #f06ba8;
-  --red-dark: #a82761;
+  --pink: #f06ba8;
+  --pink-soft: #ff9cc6;
+  --pink-dark: #a82761;
+  /* Backward-compatible aliases keep every existing accent consistently pink. */
+  --red: var(--pink);
+  --red-dark: var(--pink-dark);
   --paper: #f7f3f5;
   --white: #ffffff;
   --gray: #686868;
@@ -27,8 +31,8 @@ button, input { font: inherit; }
 .site-header { position: sticky; top: 0; z-index: 30; background: rgba(17, 17, 17, 0.97); color: var(--white); border-bottom: 3px solid var(--red); }
 .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--white); text-decoration: none; flex: 0 0 auto; }
-.brand-logo-wrap { width: 56px; height: 54px; display: grid; place-items: center; padding: 4px 6px; overflow: hidden; background: var(--white); }
-.brand-logo { width: 46px; height: 46px; object-fit: contain; }
+.brand-logo-wrap { width: 48px; height: 42px; max-width: 48px; display: grid; place-items: center; padding: 0; overflow: hidden; flex: 0 0 48px; background: transparent; }
+.brand-logo { width: 44px; max-width: 44px; height: 38px; object-fit: contain; }
 .brand-copy { display: grid; line-height: 1; letter-spacing: .06em; }
 .brand-copy strong { font: 800 22px/1 var(--display); }
 .brand-copy small { margin-top: 4px; font-size: 8px; font-weight: 700; letter-spacing: .18em; color: #bfbfbf; }
@@ -46,14 +50,14 @@ button, input { font: inherit; }
 .hero-grid { position: absolute; inset: 0; opacity: .14; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 11px 11px; mask-image: linear-gradient(90deg, transparent, black 65%); }
 .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(290px, .75fr); align-items: center; gap: 70px; padding-block: 100px; }
 .eyebrow { margin: 0 0 14px; color: var(--red-dark); font-size: 12px; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
-.eyebrow.light { color: var(--pink-2, #ff9cc6); }
+.eyebrow.light { color: var(--pink-soft); }
 .hero h1, .page-hero h1, .cta-section h2 { margin: 0; font: italic 800 clamp(58px, 8.5vw, 112px)/.82 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
 .hero h1 em { color: var(--red); font-style: inherit; }
 .hero-lead { max-width: 690px; margin: 30px 0 0; color: #d3d3d3; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 50px; padding: 13px 19px; text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
 .button-primary { background: var(--red); color: var(--white); }
-.button-primary:hover { background: #ff9cc6; color: var(--ink); }
+.button-primary:hover { background: var(--pink-soft); color: var(--ink); }
 .button-ghost { color: var(--white); border: 1px solid #696969; }
 .button-ghost:hover { border-color: var(--white); }
 .hero-visual { position: relative; min-height: 520px; }
