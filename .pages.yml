@@ -212,3 +212,106 @@ content:
       - { name: description, label: Description, type: text }
       - { name: button_text, label: Button text, type: string }
       - { name: button_url, label: Button URL, type: string }
+
+  - name: coaching_site
+    label: Coaching Resources — Settings
+    type: file
+    path: src/_data/coachingSite.json
+    format: json
+    fields:
+      - { name: name, label: Site name, type: string, required: true }
+      - { name: shortName, label: Short name, type: string, required: true }
+      - { name: tagline, label: Homepage tagline, type: string, required: true }
+      - { name: description, label: Search description, type: text, required: true }
+      - { name: email, label: Contact email, type: string, required: true }
+      - { name: pickSixUrl, label: Pick-6 Scouting URL, type: string }
+      - name: partnerLinks
+        label: Partner links
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: url, label: URL, type: string, required: true }
+
+  - name: coaching_resources
+    label: Coaching Resources — Library
+    type: file
+    path: src/_data/coachingResources.json
+    format: json
+    list: true
+    fields:
+      - { name: slug, label: Page URL name, type: string, required: true }
+      - { name: title, label: Category name, type: string, required: true }
+      - { name: eyebrow, label: Small heading, type: string }
+      - { name: summary, label: Category summary, type: text, required: true }
+      - name: groups
+        label: Resource groups
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Group name, type: string, required: true }
+          - name: items
+            label: Resources
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Resource name, type: string, required: true }
+              - { name: url, label: Resource URL, type: string, required: true }
+              - { name: type, label: Resource type, type: string }
+              - { name: description, label: Optional description, type: text }
+
+  - name: coaching_drills
+    label: Coaching Resources — Drills
+    type: file
+    path: src/_data/coachingDrills.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Drill category, type: string, required: true }
+      - name: items
+        label: Drills
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Drill name, type: string, required: true }
+          - { name: url, label: Video or resource URL, type: string, required: true }
+          - { name: source, label: Source, type: string }
+
+  - name: coaching_development
+    label: Coaching Resources — Development
+    type: file
+    path: src/_data/coachingDevelopment.json
+    format: json
+    fields:
+      - name: learning
+        label: Webinars and clinics
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: presenter, label: Presenter, type: string }
+          - { name: url, label: URL, type: string, required: true }
+      - name: events
+        label: Event archive
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Event, type: string, required: true }
+          - { name: date, label: Date, type: string }
+          - { name: details, label: Location or details, type: string }
+          - { name: url, label: URL, type: string, required: true }
+      - name: officiating
+        label: Officiating
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Resource name, type: string, required: true }
+          - { name: url, label: URL, type: string, required: true }
+          - { name: details, label: Details, type: string }
+      - name: books
+        label: Recommended books
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Book title, type: string, required: true }
+          - { name: url, label: URL, type: string, required: true }
