@@ -259,6 +259,12 @@ content:
               - { name: url, label: Resource URL, type: string, required: true }
               - { name: type, label: Resource type, type: string }
               - { name: description, label: Optional description, type: text }
+              - name: preview
+                label: Optional document preview image
+                type: image
+                options:
+                  extensions: [png, jpg, jpeg, webp]
+                  rename: safe
 
   - name: coaching_drills
     label: Coaching Resources — Drills
@@ -291,6 +297,12 @@ content:
           - { name: title, label: Title, type: string, required: true }
           - { name: presenter, label: Presenter, type: string }
           - { name: url, label: URL, type: string, required: true }
+          - name: preview
+            label: Optional preview image
+            type: image
+            options:
+              extensions: [png, jpg, jpeg, webp]
+              rename: safe
       - name: events
         label: Event archive
         type: object
