@@ -1,12 +1,12 @@
 [
   {
-    "season": "Spring/Fall",
-    "title": "Carbonite Sports",
-    "description": "Carbonite Sports is the official spring and fall league partner of River Falls Girls Flag Football. Players are encouraged to use Carbonite Sports seasons to gain experience, strengthen fundamentals, and prepare for club tournament competition. Carbonite registration and fees are separate from the River Falls Girls Flag Football summer club program."
-  },
-  {
-    "season": "Summer",
+    "season": "Spring/Summer",
     "title": "Travel Club",
-    "description": "Teams will compete in 3-5 tournaments, including NFL FLAG regionals. The schedule will be selected based on available age divisions, quality of competition, team readiness, travel demands, and overall cost to families."
-  }
+    "description": "Teams will compete in 4-6 tournaments, including NFL FLAG regionals. The schedule will be selected based on available age divisions, quality of competition, team readiness, travel demands, and overall cost to families."
+  },
+   {
+    "season": "Fall",
+    "title": "Carbonite Sports",
+    "description": "Carbonite Sports is the official fall league partner of River Falls Girls Flag Football. Players are encouraged to use Carbonite Sports seasons to gain experience, strengthen fundamentals, and prepare for club tournament competition. Carbonite registration and fees are separate from the River Falls Girls Flag Football spring/summer club program."
+  },
 ]
