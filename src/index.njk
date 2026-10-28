@@ -88,7 +88,7 @@ permalink: index.html
         <div class="team-grid">
           {% for team in teams %}<article class="team-card"><div class="age-badge">{{ team.age }}</div><h3>{{ team.title }}</h3><p>{{ team.description }}</p><span>{{ team.note }}</span></article>{% endfor %}
         </div>
-        <p class="age-note">The club intends to use an August 1 age cutoff when possible. Final eligibility follows each tournament’s rules.</p>
+        <p class="age-note">Final eligibility follows each tournament’s rules.</p>
       </div>
     </section>
 
@@ -100,7 +100,6 @@ permalink: index.html
             {% for item in pathway %}<article><span>{{ item.season }}</span><div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
           </div>
         </div>
-        <div class="shell partner-note"><b>League partnership</b><p>Carbonite Sports registration is separate from River Falls Girls Flag Football club membership and does not guarantee selection for a club roster.</p></div>
       </div>
       <div class="season-schedule">
         <div class="shell">
@@ -111,15 +110,15 @@ permalink: index.html
           <div class="schedule-table-wrap">
             <table class="schedule-table">
               <thead>
-                <tr><th scope="col">Tournament</th><th scope="col">Venue</th><th scope="col">Location</th><th scope="col">Date</th></tr>
+                <tr><th scope="col">Date</th><th scope="col">Tournament</th><th scope="col">Venue</th><th scope="col">Location</th></tr>
               </thead>
               <tbody>
                 {% for event in schedule %}
                 <tr>
+                  <td data-label="Date" class="schedule-date{% if event.date == 'TBD' %} schedule-date-tbd{% endif %}">{{ event.date }}</td>
                   <td data-label="Tournament">{{ event.tournament }}</td>
                   <td data-label="Venue">{{ event.venue }}</td>
                   <td data-label="Location">{{ event.location }}</td>
-                  <td data-label="Date" class="schedule-date{% if event.date == 'TBD' %} schedule-date-tbd{% endif %}">{{ event.date }}</td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -167,8 +166,8 @@ permalink: index.html
       <div class="shell split">
         <div><p class="section-number light">Fees & policies</p><h2>{{ policies.headline }}</h2><p class="fees-intro">{{ policies.introduction }}</p></div>
         <div class="policy-content">
-          <article><h3>Core season expenses</h3><ul>{% for item in policies.included %}<li>{{ item }}</li>{% endfor %}</ul></article>
-          <article><h3>Travel and family expenses</h3><p>{{ policies.family_costs }}</p></article>
+          <article><h3>Core season expenses</h3><ul>{% for item in policies.included %}<li>{{ item }}</li>{% endfor %}</ul><div class="policy-callout"><b>Player IDs</b><p>{{ policies.player_ids }}</p></div></article>
+          <article><h3>Travel and family expenses</h3><ul>{% for item in policies.family_costs %}<li>{{ item }}</li>{% endfor %}</ul><p class="policy-note">{{ policies.family_note }}</p></article>
           <article><h3>Financial assistance</h3><p>{{ policies.assistance }}</p></article>
           <article><h3>Withdrawals and refunds</h3><p>{{ policies.refunds }}</p></article>
         </div>
