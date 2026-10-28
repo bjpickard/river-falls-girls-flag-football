@@ -164,9 +164,9 @@ permalink: index.html
 
     <section class="fees-section" id="fees">
       <div class="shell split">
-        <div><p class="section-number light">Fees & policies</p><h2>{{ policies.headline }}</h2><p class="fees-intro">{{ policies.introduction }}</p></div>
+        <div class="fees-summary"><p class="section-number light">Fees & policies</p><h2>{{ policies.headline }}</h2><p class="fees-intro">{{ policies.introduction }}</p><div class="policy-callout"><b>Player IDs</b><p>{{ policies.player_ids }}</p></div></div>
         <div class="policy-content">
-          <article><h3>Core season expenses</h3><ul>{% for item in policies.included %}<li>{{ item }}</li>{% endfor %}</ul><div class="policy-callout"><b>Player IDs</b><p>{{ policies.player_ids }}</p></div></article>
+          <article><h3>Core season expenses</h3><ul>{% for item in policies.included %}<li>{{ item }}</li>{% endfor %}</ul></article>
           <article><h3>Travel and family expenses</h3><ul>{% for item in policies.family_costs %}<li>{{ item }}</li>{% endfor %}</ul><p class="policy-note">{{ policies.family_note }}</p></article>
           <article><h3>Financial assistance</h3><p>{{ policies.assistance }}</p></article>
           <article><h3>Withdrawals and refunds</h3><p>{{ policies.refunds }}</p></article>

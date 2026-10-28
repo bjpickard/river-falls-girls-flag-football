@@ -157,7 +157,9 @@ h2 { margin:0; color:var(--black); font-family:Impact,"Arial Narrow",sans-serif;
 .policy-content p,.policy-content li { color:#ddd2d8; font-family:Georgia,serif; line-height:1.65; }
 .policy-callout { margin-top:24px; padding:18px 20px; background:rgba(240,107,168,.12); border-left:4px solid var(--pink); }
 .policy-callout b { display:block; margin-bottom:6px; color:var(--pink-2); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
-.policy-callout p,.policy-note { margin:0; }
+.policy-callout p { margin:0; color:#ddd2d8; font-family:Georgia,serif; line-height:1.65; }
+.fees-summary .policy-callout { max-width:680px; }
+.policy-note { margin:0; }
 .policy-note { margin-top:18px!important; }
 
 .faq-list { border-top:2px solid var(--black); }
