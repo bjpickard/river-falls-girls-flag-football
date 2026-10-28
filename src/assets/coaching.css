@@ -54,6 +54,10 @@ button, input { font: inherit; }
 .hero h1, .page-hero h1, .cta-section h2 { margin: 0; font: italic 800 clamp(58px, 8.5vw, 112px)/.82 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
 .hero h1 em { color: var(--red); font-style: inherit; }
 .hero-lead { max-width: 690px; margin: 30px 0 0; color: #d3d3d3; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
+.hero-purpose h1 { font-size: clamp(50px, 6.6vw, 88px); }
+.hero-purpose-copy { font-size: clamp(15px, 1.45vw, 18px); }
+.hero-purpose-copy p { margin: 0 0 15px; }
+.hero-purpose-copy p:last-child { margin-bottom: 0; }
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 50px; padding: 13px 19px; text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
 .button-primary { background: var(--red); color: var(--white); }
@@ -70,6 +74,8 @@ button, input { font: inherit; }
 .hero-board span { font: italic 800 31px/1 var(--display); text-transform: uppercase; }
 
 .intro-section { padding: 105px 0; background: var(--white); }
+.intro-photo-section { padding: 80px 0; }
+.intro-photo-section .coaching-photo-strip { margin-top: 0; }
 .split-intro { display: grid; grid-template-columns: .9fr 1.2fr; gap: 9vw; align-items: start; }
 .split-intro h2, .section-heading h2, .group-heading h2 { margin: 0; font: italic 800 clamp(44px, 6vw, 78px)/.92 var(--display); text-transform: uppercase; letter-spacing: -.02em; }
 .prose p { margin: 0 0 22px; }
@@ -108,6 +114,7 @@ button, input { font: inherit; }
 .cta-section h2 { font-size: clamp(48px, 6.5vw, 84px); }
 .cta-inner > div:last-child p { margin: 0 0 24px; font-size: 18px; }
 .cta-section .button-primary { background: var(--ink); }
+.cta-section .button-primary:hover { background: var(--white); color: var(--ink); }
 
 .page-hero { position: relative; padding: 95px 0 82px; overflow: hidden; color: var(--white); background: #171717; }
 .page-hero::after { content: ""; position: absolute; width: 420px; aspect-ratio: 1; right: -120px; top: -210px; border: 55px solid var(--red); border-radius: 50%; opacity: .9; }
@@ -193,6 +200,7 @@ button, input { font: inherit; }
   .hero { min-height: 0; }
   .hero-inner { padding-block: 78px; gap: 55px; }
   .hero h1 { font-size: clamp(54px, 17vw, 78px); }
+  .hero-purpose h1 { font-size: clamp(44px, 14vw, 68px); }
   .hero-board div { min-height: 112px; padding: 16px; }
   .hero-board { grid-template-columns: 1fr 1fr; }
   .hero-board span { font-size: 27px; }
