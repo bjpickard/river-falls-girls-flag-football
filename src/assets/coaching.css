@@ -55,6 +55,8 @@ button, input { font: inherit; }
 .hero h1 em { color: var(--red); font-style: inherit; }
 .hero-lead { max-width: 690px; margin: 30px 0 0; color: #d3d3d3; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
 .hero-purpose h1 { font-size: clamp(50px, 6.6vw, 88px); }
+.hero-purpose .hero-inner { grid-template-columns: 1fr; }
+.hero-purpose .hero-copy { max-width: 1060px; }
 .hero-purpose-copy { font-size: clamp(15px, 1.45vw, 18px); }
 .hero-purpose-copy p { margin: 0 0 15px; }
 .hero-purpose-copy p:last-child { margin-bottom: 0; }
@@ -74,8 +76,6 @@ button, input { font: inherit; }
 .hero-board span { font: italic 800 31px/1 var(--display); text-transform: uppercase; }
 
 .intro-section { padding: 105px 0; background: var(--white); }
-.intro-photo-section { padding: 80px 0; }
-.intro-photo-section .coaching-photo-strip { margin-top: 0; }
 .split-intro { display: grid; grid-template-columns: .9fr 1.2fr; gap: 9vw; align-items: start; }
 .split-intro h2, .section-heading h2, .group-heading h2 { margin: 0; font: italic 800 clamp(44px, 6vw, 78px)/.92 var(--display); text-transform: uppercase; letter-spacing: -.02em; }
 .prose p { margin: 0 0 22px; }
