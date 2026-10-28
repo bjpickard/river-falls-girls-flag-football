@@ -1,53 +1,256 @@
 {
   "learning": [
-    { "title": "Green Bay Packers Girls’ Flag Football Town Hall", "presenter": "Packers, WIAA, WFCA, UW–Oshkosh, coaches and administrators", "url": "https://packers.zoom.us/webinar/register/rec/WN_GLgsltqOQc6lM9VAUaj6gQ?meetingId=PllvB7GGq4GnAsyGOmXhnlT3S02mQd7Nq8ThAEVQKEWGrfFY30fOmL3jMM7GtGGS.XXUP-iPRq2ks5j2R&playId=&action=play#/registration" },
-    { "title": "Leading the Female Athlete", "presenter": "Dr. Deliah Autry-Jones, U.S. Women’s National Flag Football Team", "url": "https://production.glazierdrive.com/library/leading-the-female-athlete-leadership-on-and-off-the-field" },
-    { "title": "Dakota Hughes Girls’ Flag Football Webinar", "presenter": "Dakota Hughes, DH Flag Football Academy", "url": "https://drive.google.com/file/d/196DkMg2ZgPVgLhcXBFMfBLW0_aW882yR/view?usp=drive_link" },
-    { "title": "Dakota Hughes Women’s Flag Football Webinar", "presenter": "Dakota Hughes, DH Flag Football Academy", "url": "https://drive.google.com/file/d/1BF2W_8kyS8EEqXnvClOBKW-9LEKtitE5/view?usp=drive_link" },
-    { "title": "Comparing 5v5 and 7v7", "presenter": "Allison Gandlin, Rutgers University", "url": "https://production.glazierdrive.com/library/same-game-different-demands-comparing-5v5-and-7v7-flag-football-through-space-tempo-and-athlete-skill-sets" },
-    { "title": "Transitioning from Coaching Tackle to Coaching Flag", "presenter": "Nick Hildreth, Willowbrook High School", "url": "https://production.glazierdrive.com/library/my-transition-from-coaching-tackle-to-coaching-flag-similarities-differences-a-plan-for-success" },
-    { "title": "A Roadmap for Building a Flag Football Program", "presenter": "Saaid Mortazavi, U.S. Women’s National Team", "url": "https://production.glazierdrive.com/library/a-roadmap-for-building-a-flag-football-program-casting-your-vision-establishing-culture-developing-your-offensivedefensive-philosophy-creating-practice-plans" },
-    { "title": "Building Winning Cultures in New and Emerging Programs", "presenter": "Melinda Nguyen, University of Texas–Arlington", "url": "https://production.glazierdrive.com/library/culture-building-in-new-emerging-programs" },
-    { "title": "Bridging the Gap: Coaching Boys Versus Coaching Girls", "presenter": "Jay Osborne, University of Mary Hardin–Baylor", "url": "https://production.glazierdrive.com/library/bridging-the-gap-coaching-boys-versus-coaching-girls-tackle-to-flag-coaching-with-purpose-perspective" },
-    { "title": "Creating a Flag Football Program from the Ground Up", "presenter": "Amanda Ruller, Eastern University", "url": "https://production.glazierdrive.com/library/creating-a-flag-football-program-from-the-ground-up" },
-    { "title": "Practice Planning for Success", "presenter": "Amanda Ruller, Eastern University", "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-practice-planning-for-success-in-flag-football-structuring-efficient-practices-that-maximize-limited-time" },
-    { "title": "The 90-Minute Youth Practice", "presenter": "Jared Rolfes, Oak Grove High School", "url": "https://production.glazierdrive.com/library/the-90-minute-youth-practice-get-the-most-out-of-your-time" },
-    { "title": "QB Development: Fundamentals, Skills & Drills", "presenter": "Steve Arnold, Fairleigh Dickinson University", "url": "https://production.glazierdrive.com/library/qb-development-fundamentals-skills-drills" },
-    { "title": "QB Development: Reading Defenses", "presenter": "Steve Arnold, Fairleigh Dickinson University", "url": "https://production.glazierdrive.com/library/qb-development-reading-defenses" },
-    { "title": "Fundamentals of Flag Football", "presenter": "Amanda Ruller, Eastern University", "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-building-a-strong-foundation-with-fundamentals-of-flag-football-flag-pulling-passing-catching-route-running-rb-technique-center-playsnapping-technique-footwork-drills-for-beginners" },
-    { "title": "Flag Avoidance", "presenter": "Bronson Stewart, Valor Christian High School", "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-flag-invasion-moves" },
-    { "title": "Flag QB Biomechanics", "presenter": "Noah Tank, Mountain View High School", "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-flag-qb-biomechanics-building-throwers-from-the-core-out" },
-    { "title": "Diagnose Defenses & Deliver on Time", "presenter": "Brian Winstead, Benedictine University", "url": "https://production.glazierdrive.com/library/teaching-quarterbacks-to-diagnose-defenses-deliver-on-time" },
-    { "title": "Maximize Your Football Speed", "presenter": "Amanda Ruller, Eastern University", "url": "https://www.youtube.com/watch?v=W7rEghHwLaQ" },
-    { "title": "Sports Nutrition for Flag Football Athletes", "presenter": "Amanda Ruller, Eastern University", "url": "https://production.glazierdrive.com/library/sports-nutrition-for-flag-football-athletes" }
+    {
+      "title": "Green Bay Packers Girls’ Flag Football Town Hall",
+      "presenter": "Packers, WIAA, WFCA, UW–Oshkosh, coaches and administrators",
+      "url": "https://packers.zoom.us/webinar/register/rec/WN_GLgsltqOQc6lM9VAUaj6gQ?meetingId=PllvB7GGq4GnAsyGOmXhnlT3S02mQd7Nq8ThAEVQKEWGrfFY30fOmL3jMM7GtGGS.XXUP-iPRq2ks5j2R&playId=&action=play#/registration",
+      "preview": "/assets/resource-previews/green-bay-packers-girls-flag-football-town-hall-72cee0f.png"
+    },
+    {
+      "title": "Leading the Female Athlete",
+      "presenter": "Dr. Deliah Autry-Jones, U.S. Women’s National Flag Football Team",
+      "url": "https://production.glazierdrive.com/library/leading-the-female-athlete-leadership-on-and-off-the-field",
+      "preview": "/assets/resource-previews/leading-the-female-athlete-150aa30.png"
+    },
+    {
+      "title": "Dakota Hughes Girls’ Flag Football Webinar",
+      "presenter": "Dakota Hughes, DH Flag Football Academy",
+      "url": "https://drive.google.com/file/d/196DkMg2ZgPVgLhcXBFMfBLW0_aW882yR/view?usp=drive_link"
+    },
+    {
+      "title": "Dakota Hughes Women’s Flag Football Webinar",
+      "presenter": "Dakota Hughes, DH Flag Football Academy",
+      "url": "https://drive.google.com/file/d/1BF2W_8kyS8EEqXnvClOBKW-9LEKtitE5/view?usp=drive_link"
+    },
+    {
+      "title": "Comparing 5v5 and 7v7",
+      "presenter": "Allison Gandlin, Rutgers University",
+      "url": "https://production.glazierdrive.com/library/same-game-different-demands-comparing-5v5-and-7v7-flag-football-through-space-tempo-and-athlete-skill-sets",
+      "preview": "/assets/resource-previews/comparing-5v5-and-7v7-c2d1219.png"
+    },
+    {
+      "title": "Transitioning from Coaching Tackle to Coaching Flag",
+      "presenter": "Nick Hildreth, Willowbrook High School",
+      "url": "https://production.glazierdrive.com/library/my-transition-from-coaching-tackle-to-coaching-flag-similarities-differences-a-plan-for-success",
+      "preview": "/assets/resource-previews/transitioning-from-coaching-tackle-to-coaching-flag-10a3007.png"
+    },
+    {
+      "title": "A Roadmap for Building a Flag Football Program",
+      "presenter": "Saaid Mortazavi, U.S. Women’s National Team",
+      "url": "https://production.glazierdrive.com/library/a-roadmap-for-building-a-flag-football-program-casting-your-vision-establishing-culture-developing-your-offensivedefensive-philosophy-creating-practice-plans",
+      "preview": "/assets/resource-previews/a-roadmap-for-building-a-flag-football-program-d369eaa.png"
+    },
+    {
+      "title": "Building Winning Cultures in New and Emerging Programs",
+      "presenter": "Melinda Nguyen, University of Texas–Arlington",
+      "url": "https://production.glazierdrive.com/library/culture-building-in-new-emerging-programs",
+      "preview": "/assets/resource-previews/building-winning-cultures-in-new-and-emerging-programs-d043b42.png"
+    },
+    {
+      "title": "Bridging the Gap: Coaching Boys Versus Coaching Girls",
+      "presenter": "Jay Osborne, University of Mary Hardin–Baylor",
+      "url": "https://production.glazierdrive.com/library/bridging-the-gap-coaching-boys-versus-coaching-girls-tackle-to-flag-coaching-with-purpose-perspective",
+      "preview": "/assets/resource-previews/bridging-the-gap-coaching-boys-versus-coaching-girls-dc1a003.png"
+    },
+    {
+      "title": "Creating a Flag Football Program from the Ground Up",
+      "presenter": "Amanda Ruller, Eastern University",
+      "url": "https://production.glazierdrive.com/library/creating-a-flag-football-program-from-the-ground-up",
+      "preview": "/assets/resource-previews/creating-a-flag-football-program-from-the-ground-up-0a3e740.png"
+    },
+    {
+      "title": "Practice Planning for Success",
+      "presenter": "Amanda Ruller, Eastern University",
+      "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-practice-planning-for-success-in-flag-football-structuring-efficient-practices-that-maximize-limited-time",
+      "preview": "/assets/resource-previews/practice-planning-for-success-2f2d81d.png"
+    },
+    {
+      "title": "The 90-Minute Youth Practice",
+      "presenter": "Jared Rolfes, Oak Grove High School",
+      "url": "https://production.glazierdrive.com/library/the-90-minute-youth-practice-get-the-most-out-of-your-time",
+      "preview": "/assets/resource-previews/the-90-minute-youth-practice-fcc1e41.png"
+    },
+    {
+      "title": "QB Development: Fundamentals, Skills & Drills",
+      "presenter": "Steve Arnold, Fairleigh Dickinson University",
+      "url": "https://production.glazierdrive.com/library/qb-development-fundamentals-skills-drills",
+      "preview": "/assets/resource-previews/qb-development-fundamentals-skills-drills-dd6de60.png"
+    },
+    {
+      "title": "QB Development: Reading Defenses",
+      "presenter": "Steve Arnold, Fairleigh Dickinson University",
+      "url": "https://production.glazierdrive.com/library/qb-development-reading-defenses",
+      "preview": "/assets/resource-previews/qb-development-reading-defenses-0d5b6b0.png"
+    },
+    {
+      "title": "Fundamentals of Flag Football",
+      "presenter": "Amanda Ruller, Eastern University",
+      "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-building-a-strong-foundation-with-fundamentals-of-flag-football-flag-pulling-passing-catching-route-running-rb-technique-center-playsnapping-technique-footwork-drills-for-beginners",
+      "preview": "/assets/resource-previews/fundamentals-of-flag-football-844dfce.png"
+    },
+    {
+      "title": "Flag Avoidance",
+      "presenter": "Bronson Stewart, Valor Christian High School",
+      "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-flag-invasion-moves",
+      "preview": "/assets/resource-previews/flag-avoidance-bdb72b5.png"
+    },
+    {
+      "title": "Flag QB Biomechanics",
+      "presenter": "Noah Tank, Mountain View High School",
+      "url": "https://production.glazierdrive.com/library/for-all-flag-coaches-flag-qb-biomechanics-building-throwers-from-the-core-out",
+      "preview": "/assets/resource-previews/flag-qb-biomechanics-f800a7d.png"
+    },
+    {
+      "title": "Diagnose Defenses & Deliver on Time",
+      "presenter": "Brian Winstead, Benedictine University",
+      "url": "https://production.glazierdrive.com/library/teaching-quarterbacks-to-diagnose-defenses-deliver-on-time",
+      "preview": "/assets/resource-previews/diagnose-defenses-deliver-on-time-317877e.png"
+    },
+    {
+      "title": "Maximize Your Football Speed",
+      "presenter": "Amanda Ruller, Eastern University",
+      "url": "https://www.youtube.com/watch?v=W7rEghHwLaQ"
+    },
+    {
+      "title": "Sports Nutrition for Flag Football Athletes",
+      "presenter": "Amanda Ruller, Eastern University",
+      "url": "https://production.glazierdrive.com/library/sports-nutrition-for-flag-football-athletes",
+      "preview": "/assets/resource-previews/sports-nutrition-for-flag-football-athletes-dc4d4e3.png"
+    }
   ],
   "events": [
-    { "title": "St. Croix Clash", "date": "September 26, 2026", "details": "Stillwater High School · Oak Park Heights, Minnesota", "url": "https://www.zortssports.com/post/clubHouse/27040" },
-    { "title": "Midwest Flag Championships", "date": "July 24, 2026", "details": "Woodside Sports Complex · Wisconsin Dells, Wisconsin", "url": "https://www.zortssports.com/post/clubHouse?tid=22695" },
-    { "title": "Swamp Fox Tournament", "date": "July 11, 2026", "details": "Eau Claire, Wisconsin", "url": "https://www.zortssports.com/post/clubHouse?tid=23945" },
-    { "title": "Battle of the North", "date": "June 27, 2026", "details": "National Sports Center · Blaine, Minnesota", "url": "https://www.zortssports.com/post/clubHouse?tid=22693" },
-    { "title": "Packers Regional", "date": "May 31, 2026", "details": "Don Hutson Center & Ray Nitschke Field · Ashwaubenon, Wisconsin", "url": "https://nflflag.com/packers-2026-spring-regional-tournament-series" },
-    { "title": "Vikings Regional", "date": "May 9, 2026", "details": "National Sports Center Stadium · Blaine, Minnesota", "url": "https://nflflag.com/vikings-2026-spring-regional-tournament-series" },
-    { "title": "Carbonite Sports Free Girls Flag Camp", "date": "July 23, 2026", "details": "Greenwood Elementary School · River Falls, Wisconsin", "url": "https://www.carbonitesports.com/" },
-    { "title": "Carbonite Sports Free Girls Flag Camp", "date": "July 8, 2026", "details": "E.P. Rock Elementary School · Hudson, Wisconsin", "url": "https://www.carbonitesports.com/" },
-    { "title": "Matthew Golden Youth Football Camp", "date": "June 26, 2026", "details": "Regis High School Football Field · Eau Claire, Wisconsin", "url": "https://www.flexworksports.com/camps/matthew-golden-jun-2026-youth-football-camp---eau-claire" },
-    { "title": "Jeff Trickey QB/Receiver Camp", "date": "June 25, 2026", "details": "Minnetonka High School · Minnetonka, Minnesota", "url": "https://jefftrickeyqbcamps.com/about-our-camps/" },
-    { "title": "Green Bay Packers Girls Flag Camp", "date": "May 9, 2026", "details": "Titletown · Green Bay, Wisconsin", "url": "https://packers.formstack.com/forms/packers_girls_flag_camp" },
-    { "title": "Glazier Flag Football Virtual Clinic", "date": "June 13–14, 2026", "details": "Free virtual clinic; registration required", "url": "https://production.glazierdrive.com/online/schedule/1097" },
-    { "title": "Green Bay Packers Football Coaches Clinic", "date": "June 26–27, 2026", "details": "Lambeau Field · Green Bay, Wisconsin", "url": "https://www.glazierclinics.com/packers" }
+    {
+      "title": "St. Croix Clash",
+      "date": "September 26, 2026",
+      "details": "Stillwater High School · Oak Park Heights, Minnesota",
+      "url": "https://www.zortssports.com/post/clubHouse/27040"
+    },
+    {
+      "title": "Midwest Flag Championships",
+      "date": "July 24, 2026",
+      "details": "Woodside Sports Complex · Wisconsin Dells, Wisconsin",
+      "url": "https://www.zortssports.com/post/clubHouse?tid=22695"
+    },
+    {
+      "title": "Swamp Fox Tournament",
+      "date": "July 11, 2026",
+      "details": "Eau Claire, Wisconsin",
+      "url": "https://www.zortssports.com/post/clubHouse?tid=23945"
+    },
+    {
+      "title": "Battle of the North",
+      "date": "June 27, 2026",
+      "details": "National Sports Center · Blaine, Minnesota",
+      "url": "https://www.zortssports.com/post/clubHouse?tid=22693"
+    },
+    {
+      "title": "Packers Regional",
+      "date": "May 31, 2026",
+      "details": "Don Hutson Center & Ray Nitschke Field · Ashwaubenon, Wisconsin",
+      "url": "https://nflflag.com/packers-2026-spring-regional-tournament-series"
+    },
+    {
+      "title": "Vikings Regional",
+      "date": "May 9, 2026",
+      "details": "National Sports Center Stadium · Blaine, Minnesota",
+      "url": "https://nflflag.com/vikings-2026-spring-regional-tournament-series"
+    },
+    {
+      "title": "Carbonite Sports Free Girls Flag Camp",
+      "date": "July 23, 2026",
+      "details": "Greenwood Elementary School · River Falls, Wisconsin",
+      "url": "https://www.carbonitesports.com/"
+    },
+    {
+      "title": "Carbonite Sports Free Girls Flag Camp",
+      "date": "July 8, 2026",
+      "details": "E.P. Rock Elementary School · Hudson, Wisconsin",
+      "url": "https://www.carbonitesports.com/"
+    },
+    {
+      "title": "Matthew Golden Youth Football Camp",
+      "date": "June 26, 2026",
+      "details": "Regis High School Football Field · Eau Claire, Wisconsin",
+      "url": "https://www.flexworksports.com/camps/matthew-golden-jun-2026-youth-football-camp---eau-claire"
+    },
+    {
+      "title": "Jeff Trickey QB/Receiver Camp",
+      "date": "June 25, 2026",
+      "details": "Minnetonka High School · Minnetonka, Minnesota",
+      "url": "https://jefftrickeyqbcamps.com/about-our-camps/"
+    },
+    {
+      "title": "Green Bay Packers Girls Flag Camp",
+      "date": "May 9, 2026",
+      "details": "Titletown · Green Bay, Wisconsin",
+      "url": "https://packers.formstack.com/forms/packers_girls_flag_camp"
+    },
+    {
+      "title": "Glazier Flag Football Virtual Clinic",
+      "date": "June 13–14, 2026",
+      "details": "Free virtual clinic; registration required",
+      "url": "https://production.glazierdrive.com/online/schedule/1097"
+    },
+    {
+      "title": "Green Bay Packers Football Coaches Clinic",
+      "date": "June 26–27, 2026",
+      "details": "Lambeau Field · Green Bay, Wisconsin",
+      "url": "https://www.glazierclinics.com/packers"
+    }
   ],
   "officiating": [
-    { "title": "NFL FLAG Referee Registry", "url": "https://nflflag.com/officiating" },
-    { "title": "Flag Football Mechanics", "url": "https://www.youtube.com/playlist?list=PLmZ9n8qSC2j0L2A-pg1k1eAde6E-7_2vn", "details": "High School Ref video playlist" }
+    {
+      "title": "NFL FLAG Referee Registry",
+      "url": "https://nflflag.com/officiating",
+      "preview": "/assets/resource-previews/nfl-flag-referee-registry-f50c321.png"
+    },
+    {
+      "title": "Flag Football Mechanics",
+      "url": "https://www.youtube.com/playlist?list=PLmZ9n8qSC2j0L2A-pg1k1eAde6E-7_2vn",
+      "details": "High School Ref video playlist",
+      "preview": "/assets/resource-previews/flag-football-mechanics-298381f.png"
+    }
   ],
   "books": [
-    { "title": "Kids These Days", "url": "https://a.co/d/9VCVSQP" },
-    { "title": "Atomic Habits", "url": "https://a.co/d/hX10f52" },
-    { "title": "Life as Sport", "url": "https://a.co/d/09FFsyN4" },
-    { "title": "The Twin Thieves", "url": "https://a.co/d/fYEkWH3" },
-    { "title": "Mind Gym", "url": "https://a.co/d/072KXr7M" },
-    { "title": "Soccer Dad", "url": "https://a.co/d/07UB2AlX" },
-    { "title": "The Art of Flag Football", "url": "https://www.barnesandnoble.com/w/the-art-of-flag-football-liz-sowers/1147886489?ean=9798319640314" },
-    { "title": "The Winner’s Manual", "url": "https://a.co/d/2goO9ll" }
+    {
+      "title": "Kids These Days",
+      "url": "https://a.co/d/9VCVSQP",
+      "preview": "/assets/resource-previews/kids-these-days-c906e17.png"
+    },
+    {
+      "title": "Atomic Habits",
+      "url": "https://a.co/d/hX10f52",
+      "preview": "/assets/resource-previews/atomic-habits-0aada97.png"
+    },
+    {
+      "title": "Life as Sport",
+      "url": "https://a.co/d/09FFsyN4",
+      "preview": "/assets/resource-previews/life-as-sport-cce127e.png"
+    },
+    {
+      "title": "The Twin Thieves",
+      "url": "https://a.co/d/fYEkWH3",
+      "preview": "/assets/resource-previews/the-twin-thieves-d251d1f.png"
+    },
+    {
+      "title": "Mind Gym",
+      "url": "https://a.co/d/072KXr7M",
+      "preview": "/assets/resource-previews/mind-gym-017becb.png"
+    },
+    {
+      "title": "Soccer Dad",
+      "url": "https://a.co/d/07UB2AlX",
+      "preview": "/assets/resource-previews/soccer-dad-ceb9cb1.png"
+    },
+    {
+      "title": "The Art of Flag Football",
+      "url": "https://www.barnesandnoble.com/w/the-art-of-flag-football-liz-sowers/1147886489?ean=9798319640314",
+      "preview": "/assets/resource-previews/the-art-of-flag-football-dd86ed9.png"
+    },
+    {
+      "title": "The Winner’s Manual",
+      "url": "https://a.co/d/2goO9ll",
+      "preview": "/assets/resource-previews/the-winner-s-manual-f1d35f7.png"
+    }
   ]
 }
