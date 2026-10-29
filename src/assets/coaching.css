@@ -143,6 +143,7 @@ button, input { font: inherit; }
 .resource-media img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .resource-media-portrait { width: min(72%, 220px); height: auto; aspect-ratio: 3 / 4; margin: 0 auto 24px; background: #f5f1f3; border: 1px solid var(--line); border-bottom: 4px solid var(--red); box-shadow: 0 12px 25px rgba(5,5,5,.16); }
 .resource-media-portrait img { object-fit: contain; background: var(--white); }
+.resource-media-logo img { padding: 18px; object-fit: contain; background: var(--white); }
 .resource-media-document { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 24px; color: var(--white); background: radial-gradient(circle at 85% 15%, rgba(240,107,168,.42), transparent 34%), repeating-linear-gradient(125deg, transparent 0 18px, rgba(255,255,255,.025) 19px 20px), var(--ink); }
 .resource-media-document::after { content: ""; position: absolute; width: 105px; height: 105px; right: -40px; top: -48px; border: 18px solid var(--pink); border-radius: 50%; opacity: .9; }
 .resource-media-document span { color: var(--pink-soft); font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }

@@ -26,7 +26,7 @@ permalink: /coaching-resources/development/index.html
           {% set videoThumbnail = item.url | youtubeThumbnail %}
           {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
           <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} webinar clinic">
-            {% if previewImage %}<span class="resource-media{% if not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document resource-media-portrait" aria-hidden="true"><span>Learning</span><strong>{{ item.title }}</strong></span>{% endif %}
+            {% if previewImage %}<span class="resource-media"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document" aria-hidden="true"><span>Learning</span><strong>{{ item.title }}</strong></span>{% endif %}
             <span class="resource-type">Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
@@ -58,8 +58,8 @@ permalink: /coaching-resources/development/index.html
       </div>
     </section>
 
-    <section class="resource-group">
-      <div class="group-heading"><p class="eyebrow">BOOKSHELF</p><h2>Recommended Reading</h2></div>
+    <section class="resource-group" id="bookshelf">
+      <div class="group-heading"><p class="eyebrow">RECOMMENDED READING</p><h2>Bookshelf</h2></div>
       <div class="resource-grid book-grid">
         {% for item in coachingDevelopment.books %}
           {% set previewImage = item.preview or (item.url | documentThumbnail) %}

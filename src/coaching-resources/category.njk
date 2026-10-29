@@ -32,7 +32,7 @@ eleventyComputed:
               {% set videoThumbnail = item.url | youtubeThumbnail %}
               {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
               {% if previewImage %}
-                <span class="resource-media{% if not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>
+                <span class="resource-media{% if category.slug == 'apps' %} resource-media-logo{% elif not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>
               {% else %}
                 <span class="resource-media resource-media-document resource-media-portrait" aria-hidden="true"><span>{{ item.type or "Resource" }}</span><strong>{{ item.title }}</strong></span>
               {% endif %}

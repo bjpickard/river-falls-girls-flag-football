@@ -152,7 +152,7 @@
           },
           {
             "title": "Abuse & Misconduct Toolkit",
-            "url": "https://eptoolkit.uscenterforsafesport.org/",
+            "url": "https://eptoolkit.uscenterforsafesport.org/wp-content/uploads/2026/03/Full_EP-Toolkit_020626-1-1-2-FINAL-ua.pdf",
             "type": "Toolkit",
             "preview": "/assets/resource-previews/abuse-misconduct-toolkit-006b9dc.jpg"
           }
@@ -286,11 +286,6 @@
             "preview": "/assets/resource-previews/coaching-players-of-different-abilities-036d407.jpg"
           },
           {
-            "title": "Managing Challenging Behavior in Youth Sports",
-            "url": "https://youtu.be/3ZGEOKh6Yhg?si=MxaBxi7mFhSntr3y",
-            "type": "Video"
-          },
-          {
             "title": "Working with Parents",
             "url": "https://playfootball.nfl.com/coaches/working-with-parents/",
             "type": "Article",
@@ -311,18 +306,6 @@
       {
         "title": "For Parents",
         "items": [
-          {
-            "title": "Parent Checklists",
-            "url": "https://discover.sportsengineplay.com/term/parent-checklist",
-            "type": "Checklist",
-            "preview": "/assets/resource-previews/parent-checklists-e8f45de.jpg"
-          },
-          {
-            "title": "Communicating with Coaches",
-            "url": "https://www.teamsnap.com/blog/general-sports/how-to-communicate-with-your-childs-coach",
-            "type": "Article",
-            "preview": "/assets/resource-previews/communicating-with-coaches-3c39e56.jpg"
-          },
           {
             "title": "The Car Ride Home",
             "url": "https://youtu.be/ib59xIjoUeA?si=OHvRVCSBGRaXm9hN",
@@ -515,12 +498,6 @@
             "url": "https://packers.formstack.com/forms/girls_flag_grant",
             "type": "Form",
             "preview": "/assets/resource-previews/green-bay-packers-grant-application-1414236.jpg"
-          },
-          {
-            "title": "Minnesota Vikings Grant Application",
-            "url": "https://minnesotavikings.formstack.com/forms/2026_minnesota_high_school_girls_flag_league_grant_application?persistUserId=V20bf39542ba1c0ed",
-            "type": "Form",
-            "preview": "/assets/resource-previews/minnesota-vikings-grant-application-3709d0a.jpg"
           }
         ]
       },

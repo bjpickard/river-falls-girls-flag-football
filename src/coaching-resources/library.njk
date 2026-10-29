@@ -26,7 +26,7 @@ permalink: /coaching-resources/library/index.html
               {% set videoThumbnail = item.url | youtubeThumbnail %}
               {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
               {% if previewImage %}
-                <span class="resource-media{% if not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>
+                <span class="resource-media{% if category.slug == 'apps' %} resource-media-logo{% elif not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>
               {% else %}
                 <span class="resource-media resource-media-document resource-media-portrait" aria-hidden="true"><span>{{ item.type or "Resource" }}</span><strong>{{ item.title }}</strong></span>
               {% endif %}
@@ -58,7 +58,7 @@ permalink: /coaching-resources/library/index.html
           {% set videoThumbnail = item.url | youtubeThumbnail %}
           {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
           <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} development webinar clinic">
-            {% if previewImage %}<span class="resource-media{% if not videoThumbnail %} resource-media-portrait{% endif %}"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document resource-media-portrait" aria-hidden="true"><span>Learning</span><strong>{{ item.title }}</strong></span>{% endif %}
+            {% if previewImage %}<span class="resource-media"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document" aria-hidden="true"><span>Learning</span><strong>{{ item.title }}</strong></span>{% endif %}
             <span class="resource-type">Development · Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
@@ -70,11 +70,16 @@ permalink: /coaching-resources/library/index.html
             <span class="resource-type">Development · Officiating</span><h3>{{ item.title }}</h3><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
+      </div>
+    </section>
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">READ & LEAD</p><h2><a href="/coaching-resources/development/#bookshelf">Bookshelf</a></h2></div>
+      <div class="resource-grid book-grid">
         {% for item in coachingDevelopment.books %}
           {% set previewImage = item.preview or (item.url | documentThumbnail) %}
-          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} development book reading">
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} bookshelf book reading">
             {% if previewImage %}<span class="resource-media resource-media-portrait"><img src="{{ previewImage }}" alt="Cover of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document resource-media-portrait" aria-hidden="true"><span>Book</span><strong>{{ item.title }}</strong></span>{% endif %}
-            <span class="resource-type">Development · Book</span><h3>{{ item.title }}</h3><span class="resource-link">View book <span aria-hidden="true">↗</span></span>
+            <span class="resource-type">Bookshelf · Book</span><h3>{{ item.title }}</h3><span class="resource-link">View book <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
       </div>
