@@ -19,26 +19,26 @@ permalink: /coaching-resources/development/index.html
       <span data-resource-count></span>
     </div>
 
-    <section class="resource-group">
-      <div class="group-heading"><p class="eyebrow">WATCH & LEARN</p><h2>Webinars & Clinics</h2></div>
-      <div class="resource-grid">
-        {% for item in coachingDevelopment.learning %}
-          {% set videoThumbnail = item.url | youtubeThumbnail %}
-          {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
-          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} webinar clinic">
-            {% if previewImage %}<span class="resource-media"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document" aria-hidden="true"><span>Learning</span><strong>{{ item.title }}</strong></span>{% endif %}
-            <span class="resource-type">Learning</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
-          </a>
-        {% endfor %}
-      </div>
-    </section>
-
     <section class="resource-group archive-group">
       <div class="group-heading"><p class="eyebrow">COACHING & PLAYER DEVELOPMENT</p><h2>Camps & Clinics</h2><p>Upcoming opportunities for coaches and athletes.</p></div>
       <div class="event-list">
         {% for item in coachingDevelopment.events %}
           <a class="event-row" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.date }} {{ item.details }} event tournament camp clinic">
             <span class="event-date">{{ item.date }}</span><span><strong>{{ item.title }}</strong><small>{{ item.details }}</small></span><span aria-hidden="true">↗</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resource-group">
+      <div class="group-heading"><p class="eyebrow">WATCH & LEARN</p><h2>Webinars</h2></div>
+      <div class="resource-grid">
+        {% for item in coachingDevelopment.learning %}
+          {% set videoThumbnail = item.url | youtubeThumbnail %}
+          {% set previewImage = item.preview or videoThumbnail or (item.url | documentThumbnail) %}
+          <a class="resource-card" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.presenter }} {{ item.category }} webinar">
+            {% if previewImage %}<span class="resource-media"><img src="{{ previewImage }}" alt="Preview of {{ item.title }}" loading="lazy"></span>{% else %}<span class="resource-media resource-media-document" aria-hidden="true"><span>{{ item.category }}</span><strong>{{ item.title }}</strong></span>{% endif %}
+            <span class="resource-type">{{ item.category }}</span><h3>{{ item.title }}</h3><p>{{ item.presenter }}</p><span class="resource-link">Open resource <span aria-hidden="true">↗</span></span>
           </a>
         {% endfor %}
       </div>
