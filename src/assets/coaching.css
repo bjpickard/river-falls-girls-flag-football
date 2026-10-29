@@ -54,9 +54,9 @@ button, input { font: inherit; }
 .hero h1, .page-hero h1, .cta-section h2 { margin: 0; font: italic 800 clamp(58px, 8.5vw, 112px)/.82 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
 .hero h1 em { color: var(--red); font-style: inherit; }
 .hero-lead { max-width: 690px; margin: 30px 0 0; color: #d3d3d3; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
-.hero-purpose h1 { font-size: clamp(50px, 6.6vw, 88px); }
-.hero-purpose .hero-inner { grid-template-columns: 1fr; }
-.hero-purpose .hero-copy { max-width: 1060px; }
+.hero-purpose h1 { font-size: clamp(50px, 4.9vw, 88px); }
+.hero-purpose .hero-inner { width: min(calc(100% - 48px), 1600px); grid-template-columns: 1fr; }
+.hero-purpose .hero-copy { max-width: 1250px; }
 .hero-rfgf-mark { position: absolute; z-index: 3; top: 50%; right: clamp(-160px, calc((1180px - 100vw) / 2 + 80px), 0px); width: clamp(270px, 21vw, 390px); transform: translateY(-44%); opacity: .94; transition: transform .2s ease, opacity .2s ease; }
 .hero-rfgf-mark:hover { transform: translateY(-44%) scale(1.025); opacity: 1; }
 .hero-rfgf-mark img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 35px rgba(0,0,0,.35)); }
