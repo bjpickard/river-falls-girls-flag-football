@@ -57,6 +57,9 @@ button, input { font: inherit; }
 .hero-purpose h1 { font-size: clamp(50px, 6.6vw, 88px); }
 .hero-purpose .hero-inner { grid-template-columns: 1fr; }
 .hero-purpose .hero-copy { max-width: 1060px; }
+.hero-rfgf-mark { position: absolute; z-index: 3; top: 50%; right: clamp(-250px, -13vw, -105px); width: clamp(270px, 21vw, 390px); transform: translateY(-44%); opacity: .94; transition: transform .2s ease, opacity .2s ease; }
+.hero-rfgf-mark:hover { transform: translateY(-44%) scale(1.025); opacity: 1; }
+.hero-rfgf-mark img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 35px rgba(0,0,0,.35)); }
 .hero-purpose-copy { font-size: clamp(15px, 1.45vw, 18px); }
 .hero-purpose-copy p { margin: 0 0 15px; }
 .hero-purpose-copy p:last-child { margin-bottom: 0; }
@@ -188,6 +191,7 @@ button, input { font: inherit; }
   .site-nav a { padding: 14px 0; border-bottom: 1px solid #333; }
   .site-nav .nav-contact { margin-top: 12px; text-align: center; }
   .hero-inner { grid-template-columns: 1fr; }
+  .hero-rfgf-mark { display: none; }
   .hero-visual { width: min(100%, 720px); }
   .hero-board { left: 18px; right: 18px; }
   .split-intro, .cta-inner { grid-template-columns: 1fr; gap: 45px; }
