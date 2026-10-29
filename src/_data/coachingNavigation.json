@@ -1,6 +1,6 @@
 [
   { "label": "Home", "url": "/coaching-resources/" },
-  { "label": "Resources", "url": "/coaching-resources/library/" },
+  { "label": "Library", "url": "/coaching-resources/library/" },
   { "label": "Drills", "url": "/coaching-resources/drills/" },
   { "label": "Development", "url": "/coaching-resources/development/" },
   { "label": "Advocacy", "url": "/coaching-resources/advocacy/" }
