@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/coaching.css?v=20261029-responsive-1">
+    <link rel="stylesheet" href="/assets/coaching.css?v=20261029-rfgf-links-1">
     <script src="/assets/coaching.js" defer></script>
   </head>
   <body>
@@ -24,7 +24,7 @@
           <span></span><span></span><span></span><span class="sr-only">Menu</span>
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Coaching resources navigation">
-          <a href="/" class="rfgf-link">RFGF Home</a>
+          <a href="/" class="rfgf-link">River Falls Girls Flag</a>
           {% for item in coachingNavigation %}
             <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
           {% endfor %}
@@ -45,6 +45,11 @@
             <span class="brand-copy"><strong>PICK-6</strong><small>COACHING RESOURCES</small></span>
           </a>
           <p>Practical tools to help coaches work smarter, lead well, and build better experiences for athletes.</p>
+          <a class="rfgf-backlink" href="/">
+            <span>A coaching initiative of</span>
+            <strong>River Falls Girls Flag</strong>
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
         <div>
           <h2>Explore</h2>
@@ -61,7 +66,7 @@
       </div>
       <div class="wrap footer-bottom">
         <span>© 2026 Pick Six Coaching Resources</span>
-        <span>Links open resources from their original publishers.</span>
+        <span><a href="/">Return to River Falls Girls Flag</a> · Links open resources from their original publishers.</span>
       </div>
     </footer>
   </body>
