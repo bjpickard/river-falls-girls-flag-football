@@ -1,14 +1,14 @@
 ---
 layout: coaching-base.njk
 title: Development
-description: Coaching webinars, event archives, officiating resources, and recommended books.
+description: Coaching webinars, camps and clinics, officiating resources, and recommended books.
 permalink: /coaching-resources/development/index.html
 ---
 <section class="page-hero">
   <div class="wrap">
     <p class="eyebrow light">KEEP LEARNING. KEEP GROWING.</p>
     <h1>DEVELOPMENT</h1>
-    <p>Long-form learning, clinics, event references, officiating education, and books worth keeping nearby.</p>
+    <p>Long-form learning, camps and clinics, officiating education, and books worth keeping nearby.</p>
   </div>
 </section>
 
@@ -34,7 +34,7 @@ permalink: /coaching-resources/development/index.html
     </section>
 
     <section class="resource-group archive-group">
-      <div class="group-heading"><p class="eyebrow">REFERENCE</p><h2>2026 Event Archive</h2><p>Past listings retained as planning references. Replace these entries in <code>src/_data/coachingDevelopment.json</code> when new dates are announced.</p></div>
+      <div class="group-heading"><p class="eyebrow">COACHING & PLAYER DEVELOPMENT</p><h2>Camps & Clinics</h2><p>Upcoming opportunities appear first, followed by past listings retained as useful planning references.</p></div>
       <div class="event-list">
         {% for item in coachingDevelopment.events %}
           <a class="event-row" href="{{ item.url }}" target="_blank" rel="noopener" data-resource-card data-search="{{ item.title }} {{ item.date }} {{ item.details }} event tournament camp clinic">
