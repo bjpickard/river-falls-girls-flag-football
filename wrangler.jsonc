@@ -11,8 +11,8 @@
       "custom_domain": true
     },
     {
-      "pattern": "www.riverfallsgirlsflag.com/*",
-      "zone_name": "riverfallsgirlsflag.com"
+      "pattern": "www.riverfallsgirlsflag.com",
+      "custom_domain": true
     }
   ]
 }
