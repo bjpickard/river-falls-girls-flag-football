@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rfgf",
+  "compatibility_date": "2026-08-20",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "riverfallsgirlsflag.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.riverfallsgirlsflag.com/*",
+      "zone_name": "riverfallsgirlsflag.com"
+    }
+  ]
+}
