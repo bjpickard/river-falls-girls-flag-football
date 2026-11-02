@@ -51,3 +51,5 @@ Run `npm install`, then `npm start`. The production build command is `npm run bu
 The existing Direct Upload Cloudflare project cannot be converted to Git
 integration. Create this as a new Pages project, confirm it works, then move the
 custom domain from the old project to the new one.
+
+Deployment refresh: November 2, 2026.
