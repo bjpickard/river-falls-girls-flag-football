@@ -53,3 +53,5 @@ integration. Create this as a new Pages project, confirm it works, then move the
 custom domain from the old project to the new one.
 
 Deployment refresh: November 2, 2026.
+
+Deployment refresh: November 5, 2026.
