@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>14U Seahawks — Roster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  =====================================================================
+  This page reads from season_data.json, which is generated from
+  seahawks-stats.xlsx (the Roster / Games / DNP Log / Game Log /
+  Scoring Plays tabs). Update the workbook, regenerate season_data.json,
+  then rebuild this page — don't hand-edit the data below.
+
+  Position / Hometown / School come from the Roster tab. Until those
+  are filled in they show as "TBD" here.
+  =====================================================================
+-->
+
+<style>
+  :root {
+    --navy: #002244;
+    --navy-light: #0a3d67;
+    --green: #69be28;
+    --gray: #a5acaf;
+    --paper: #f6f7f5;
+    --ink: #16191c;
+    --line: #dde1de;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, .num { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.01em; }
+
+  header { background: var(--navy); color: white; padding: 22px 24px; }
+
+  .brand-row {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .brand-text h1 { margin: 0; font-size: 30px; text-transform: uppercase; line-height: 1; }
+  .brand-text p { margin: 6px 0 0; color: var(--gray); font-size: 14px; }
+
+  .back-link {
+    color: var(--green);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    display: none;
+  }
+  .back-link.show { display: inline-block; }
+
+  main { max-width: 980px; margin: 0 auto; padding: 32px 24px 64px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* ---- Roster grid ---- */
+  .roster-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .roster-controls h2 {
+    margin: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  .sort-buttons { display: flex; gap: 6px; }
+  .sort-buttons button {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    background: white;
+    border: 1px solid var(--line);
+    color: var(--navy-light);
+    padding: 7px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .sort-buttons button.active { background: var(--navy); border-color: var(--navy); color: white; }
+
+  .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .roster-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .roster-card:hover { border-color: var(--green); }
+
+  .roster-card .card-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--green);
+    background: var(--navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  .roster-card h3 { margin: 0 0 2px; font-size: 17px; color: var(--navy); }
+  .roster-card .position { font-size: 13px; color: var(--navy-light); font-weight: 600; }
+  .roster-card .meta { font-size: 12.5px; color: var(--gray); margin-top: 6px; }
+
+  /* ---- Player profile ---- */
+  .profile-head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 22px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .profile-head .card-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: var(--green);
+    background: var(--navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 4px;
+    flex: none;
+  }
+
+  .profile-head h2 { margin: 0; font-size: 24px; color: var(--navy); text-transform: none; border: none; padding: 0; }
+  .profile-head .position { color: var(--green-dark, var(--navy-light)); font-weight: 700; font-size: 14px; margin-top: 2px; }
+  .profile-head .meta-row { display: flex; gap: 18px; margin-top: 8px; flex-wrap: wrap; }
+  .profile-head .meta-row div { font-size: 13px; color: var(--gray); }
+  .profile-head .meta-row strong { color: var(--ink); font-weight: 600; }
+
+  section { margin-bottom: 32px; }
+  section h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+  thead th {
+    background: var(--navy); color: white; font-family: 'Inter', sans-serif;
+    font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  tbody tr:nth-child(even) { background: #fafbfa; }
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 4px; }
+
+  .no-stats {
+    background: white;
+    border: 1px dashed var(--line);
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+  }
+
+  footer { text-align: center; color: var(--gray); font-size: 12.5px; padding: 20px 24px 40px; }
+
+  .portal-nav {
+    max-width: 980px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .portal-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 11px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 3px;
+  }
+  .portal-nav a:hover, .portal-nav a[aria-current="page"] { color: var(--navy); background: var(--green); border-color: var(--green); }
+  .portal-nav .portal-home { margin-right: auto; color: var(--green); border-color: transparent; padding-left: 0; }
+
+  @media (max-width: 600px) {
+    .brand-text h1 { font-size: 24px; }
+    th, td { font-size: 12.5px; padding: 7px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="portal-nav" aria-label="Stats portal navigation">
+    <a class="portal-home" href="./">2026 Seahawks Portal</a>
+    <a href="stats.html">Stats</a>
+    <a href="roster.html" aria-current="page">Roster</a>
+    <a href="stat-pack.html">Stat Pack</a>
+  </div>
+  <div class="brand-row">
+    <div class="brand-text">
+      <h1>14U Seahawks</h1>
+      <p id="header-sub">Roster &middot; Fall 2026 Season</p>
+    </div>
+    <a class="back-link" id="back-link">&larr; Back to roster</a>
+  </div>
+</header>
+
+<main>
+  <div class="view active" id="view-roster">
+    <div class="roster-controls">
+      <h2>Roster</h2>
+      <div class="sort-buttons" id="sort-buttons">
+        <button class="active" data-sort="num">Sort by #</button>
+        <button data-sort="name">Sort by name</button>
+      </div>
+    </div>
+    <div class="roster-grid" id="roster-grid"></div>
+  </div>
+
+  <div class="view" id="view-profile"></div>
+</main>
+
+<footer>
+  14U Seahawks &middot; River Falls Girls Flag Football LLC
+</footer>
+
+<script>
+const SEASON_DATA = {"players":[{"num":1,"first":"Kinsley","last":"Flaatten","position":"WR/LB","hometown":"River Falls, WI","school":"Westside"},{"num":2,"first":"Isla","last":"Pickard","position":"C/CB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":3,"first":"Sutton","last":"Merta","position":"QB/S","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":4,"first":"Lenni","last":"Bechtel","position":"WR/CB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":6,"first":"Reece","last":"Watters","position":"WR/CB","hometown":"Hudson, WI","school":"Hudson"},{"num":7,"first":"Dianna","last":"Kreidermacher","position":"WR/LB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":8,"first":"Charlie","last":"Pickering","position":"ATH/LB","hometown":"River Falls, WI","school":"Greenwood"},{"num":11,"first":"Amara","last":"Peters","position":"RB/R","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":16,"first":"Nora","last":"Tommerdahl","position":"RB/CB","hometown":"River Falls, WI","school":"Westside"},{"num":21,"first":"Milaynah","last":"Johnson","position":"RB/R","hometown":"River Falls, WI","school":"Meyer"},{"num":31,"first":"Skylar","last":"Sherman","position":"ATH/S","hometown":"River Falls, WI","school":"Rocky Branch"}],"games":[{"week":1,"date":"2026-09-12","opponent":"Rams","scoreUs":26,"scoreThem":6,"dnp":["Kinsley Flaatten"],"box":{"Isla Pickard":{"recTgt":3,"rec":2,"recYds":20,"recLong":10,"flagPull":2},"Sutton Merta":{"passAtt":6,"passComp":4,"passYds":48,"passTD":1,"passLong":19},"Lenni Bechtel":{"rushAtt":4,"rushYds":13,"rushLong":7,"recTgt":1,"rec":1,"recYds":12,"recLong":12,"flagPull":2,"twoPt":1},"Reece Watters":{"recTgt":1,"flagPull":1},"Dianna Kreidermacher":{},"Charlie Pickering":{"rushAtt":2,"rushYds":17,"rushLong":14,"flagPull":3},"Amara Peters":{"rushAtt":3,"rushYds":43,"rushTD":1,"rushLong":21,"recTgt":2,"rec":2,"recYds":28,"recTD":1,"recLong":19,"flagPull":2},"Nora Tommerdahl":{"rushAtt":3,"rushYds":18,"rushLong":10,"recTgt":1,"flagPull":1},"Milaynah Johnson":{"rushAtt":5,"rushYds":49,"rushTD":1,"rushLong":24,"recTgt":1,"flagPull":2,"qbh":3},"Skylar Sherman":{"passAtt":3,"passComp":1,"passYds":12,"passLong":12,"flagPull":6,"defInt":1,"pickSix":1}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"16-yard touchdown run"},{"type":"PAT","player":"Lenni Bechtel","desc":"2-point conversion","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Skylar Sherman","desc":"5-yard interception return touchdown"},{"type":"TD","player":"Amara Peters","desc":"9-yard touchdown catch","detail":"pass from Sutton Merta"},{"type":"TD","player":"Amara Peters","desc":"14-yard touchdown run"}]},{"week":2,"date":"2026-09-19","opponent":"Dolphins","scoreUs":0,"scoreThem":20,"dnp":[],"box":{"Kinsley Flaatten":{"rushAtt":1},"Isla Pickard":{"rushAtt":3,"rushYds":7,"rushLong":4},"Sutton Merta":{"passAtt":9,"passComp":2,"passYds":18,"passLong":11,"recTgt":1,"flagPull":3},"Lenni Bechtel":{"rushAtt":2,"recTgt":1},"Reece Watters":{"recTgt":3,"flagPull":3},"Dianna Kreidermacher":{"rushAtt":2,"rushYds":7,"rushLong":5},"Charlie Pickering":{"rushAtt":1},"Amara Peters":{"passAtt":1,"recTgt":3,"rec":1,"recYds":7,"recLong":7,"flagPull":3,"pbu":1},"Nora Tommerdahl":{"rushAtt":1,"rushYds":-1,"rushLong":-1,"recTgt":3,"rec":1,"recYds":11,"recLong":11,"flagPull":1},"Milaynah Johnson":{"rushAtt":6,"rushYds":27,"rushLong":8,"flagPull":3,"qbh":5},"Skylar Sherman":{"passAtt":1,"passInt":1,"flagPull":2,"defInt":1}},"scoringPlays":[]},{"week":3,"date":"2026-09-26","opponent":"Raiders","scoreUs":6,"scoreThem":40,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":3,"rec":2,"recYds":12,"recLong":9,"flagPull":2},"Isla Pickard":{"recTgt":2},"Sutton Merta":{"rushAtt":1,"rushYds":7,"rushLong":7,"passAtt":10,"passComp":4,"passYds":29,"passLong":10,"passInt":1,"flagPull":3},"Lenni Bechtel":{"rushAtt":1,"rushYds":2,"rushLong":2,"recTgt":3,"rec":1,"recYds":11,"recLong":11,"flagPull":1},"Reece Watters":{"rushAtt":1,"rushYds":1,"rushLong":1,"recTgt":2,"rec":1,"recYds":5,"recLong":5,"pbu":1},"Dianna Kreidermacher":{},"Charlie Pickering":{"passAtt":4,"passComp":3,"passYds":24,"passLong":15,"recTgt":1,"rec":1,"recYds":6,"recLong":6,"flagPull":2},"Amara Peters":{"rushAtt":2,"rushYds":2,"rushLong":2,"recTgt":4,"rec":3,"recYds":18,"recLong":6,"flagPull":5,"sack":1,"defInt":1},"Nora Tommerdahl":{"recTgt":2,"rec":2,"recYds":31,"recTD":1,"recLong":24},"Milaynah Johnson":{"rushAtt":3,"rushYds":12,"rushLong":7,"recTgt":1,"rec":1,"recYds":11,"recLong":11,"flagPull":5,"qbh":1},"Skylar Sherman":{"passAtt":6,"passComp":6,"passYds":60,"passTD":1,"passLong":24,"recTgt":2,"rec":2,"recYds":19,"recLong":15,"flagPull":1,"pbu":1}},"scoringPlays":[{"type":"TD","player":"Nora Tommerdahl","desc":"24-yard touchdown catch","detail":"pass from Skylar Sherman"}]},{"week":4,"date":"2026-10-03","opponent":"Dolphins","scoreUs":6,"scoreThem":29,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":1,"rec":1,"recYds":2,"recLong":2,"flagPull":2},"Isla Pickard":{"flagPull":1},"Sutton Merta":{"passAtt":8,"passComp":5,"passYds":28,"passLong":8,"passInt":1,"flagPull":1,"qbh":1},"Lenni Bechtel":{"recTgt":6,"rec":4,"recYds":19,"recLong":11,"pbu":1},"Reece Watters":{"recTgt":3,"rec":1,"recYds":8,"recLong":8,"pbu":1},"Dianna Kreidermacher":{"recTgt":1,"rec":1,"recYds":3,"recLong":3,"qbh":1},"Charlie Pickering":{"passAtt":7,"passComp":3,"passYds":23,"passLong":11,"flagPull":3,"pbu":2},"Amara Peters":{"rushAtt":2,"rushYds":6,"rushLong":5,"recTgt":5,"rec":3,"recYds":36,"recLong":26,"flagPull":3},"Nora Tommerdahl":{"rushAtt":1,"rushYds":4,"rushLong":4,"recTgt":3},"Milaynah Johnson":{"rushAtt":3,"rushYds":25,"rushTD":1,"rushLong":16,"recTgt":3,"rec":2,"recYds":15,"recLong":8,"flagPull":3,"qbh":2,"pbu":2},"Skylar Sherman":{"rushAtt":1,"passAtt":7,"passComp":4,"passYds":32,"passLong":26,"pbu":1}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"16-yard touchdown run"}]},{"week":5,"date":"2026-10-10","opponent":"Raiders","scoreUs":18,"scoreThem":29,"dnp":[],"box":{"Kinsley Flaatten":{"rushAtt":1,"flagPull":4},"Isla Pickard":{"flagPull":4},"Sutton Merta":{"rushAtt":4,"rushYds":68,"rushTD":1,"rushLong":45,"passAtt":4,"passComp":1,"passYds":16,"passLong":16,"flagPull":3,"sack":1},"Lenni Bechtel":{"recTgt":3,"rec":1,"recYds":16,"recLong":16},"Reece Watters":{"flagPull":2},"Dianna Kreidermacher":{"flagPull":1},"Charlie Pickering":{"rushAtt":1,"rushYds":5,"rushLong":5,"passAtt":4,"passComp":3,"passYds":56,"passTD":1,"passLong":48,"flagPull":4},"Amara Peters":{"rushAtt":2,"rushYds":21,"rushLong":14,"recTgt":2,"rec":2,"recYds":8,"recLong":4,"flagPull":2},"Nora Tommerdahl":{"rushAtt":1,"recTgt":6,"rec":3,"recYds":37,"recLong":16},"Milaynah Johnson":{"rushAtt":4,"rushYds":39,"rushTD":1,"rushLong":22,"recTgt":2,"rec":1,"recYds":48,"recTD":1,"recLong":48,"flagPull":3,"qbh":1},"Skylar Sherman":{"passAtt":6,"passComp":3,"passYds":37,"passLong":16,"passInt":1,"recTgt":1,"flagPull":2}},"scoringPlays":[{"type":"TD","player":"Sutton Merta","desc":"45-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"22-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"48-yard touchdown catch","detail":"pass from Charlie Pickering"}]},{"week":6,"date":"2026-10-17","opponent":"Rams","scoreUs":33,"scoreThem":0,"dnp":["Skylar Sherman"],"box":{"Kinsley Flaatten":{"flagPull":8},"Isla Pickard":{"rushAtt":3,"rushYds":17,"rushLong":7},"Sutton Merta":{"rushAtt":2,"rushYds":56,"rushTD":1,"rushLong":48,"passAtt":3,"passComp":2,"passYds":27,"passTD":1,"passLong":22,"recTgt":1,"rec":1,"recYds":27,"recTD":1,"recLong":27,"flagPull":3,"onePt":1},"Lenni Bechtel":{"rushAtt":2,"rushYds":12,"rushLong":7,"passAtt":3,"passComp":1,"passYds":12,"passLong":12,"recTgt":1,"flagPull":2},"Reece Watters":{"rushAtt":4,"rushYds":21,"rushLong":7,"passAtt":2,"recTgt":1,"rec":1,"recYds":12,"recLong":12,"flagPull":2,"pbu":2},"Dianna Kreidermacher":{"rushAtt":2,"rushYds":8,"rushLong":7},"Charlie Pickering":{"rushAtt":1,"rushYds":14,"rushLong":14,"passAtt":1,"recTgt":2,"flagPull":2},"Amara Peters":{"rushAtt":2,"rushYds":30,"rushLong":18,"passAtt":1,"passComp":1,"passYds":27,"passTD":1,"passLong":27,"recTgt":3,"rec":2,"recYds":27,"recTD":1,"recLong":22,"flagPull":1,"pbu":1,"onePt":2},"Nora Tommerdahl":{"rushAtt":1,"rushYds":6,"rushLong":6,"recTgt":2,"flagPull":1},"Milaynah Johnson":{"rushAtt":2,"rushYds":45,"rushTD":2,"rushLong":24,"flagPull":4,"qbh":2},"Skylar Sherman":{}},"scoringPlays":[{"type":"TD","player":"Amara Peters","desc":"5-yard touchdown catch","detail":"pass from Sutton Merta"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"48-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"27-yard touchdown catch","detail":"pass from Amara Peters"},{"type":"PAT","player":"Sutton Merta","desc":"1-point conversion","detail":"pass from Amara Peters"},{"type":"TD","player":"Milaynah Johnson","desc":"24-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"21-yard touchdown run"}]},{"week":7,"date":"2026-10-24","opponent":"Rams","scoreUs":26,"scoreThem":0,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":1,"rec":1,"recYds":1,"recTD":1,"recLong":1,"flagPull":1},"Isla Pickard":{"rushAtt":1,"rushYds":7,"rushLong":7},"Sutton Merta":{"rushAtt":1,"rushYds":10,"rushLong":10,"passAtt":1,"passComp":1,"passYds":17,"passLong":17,"recTgt":2,"rec":1,"recYds":5,"recTD":1,"recLong":5,"flagPull":1,"pbu":1},"Lenni Bechtel":{"passAtt":3,"passComp":2,"passYds":6,"passTD":1,"passLong":5,"flagPull":1},"Reece Watters":{"rushAtt":1,"rushYds":2,"rushLong":2},"Dianna Kreidermacher":{},"Charlie Pickering":{"recTgt":1,"flagPull":3,"pbu":1},"Amara Peters":{"rushAtt":2,"rushYds":22,"rushLong":12,"recTgt":2,"rec":2,"recYds":28,"recLong":17,"flagPull":1,"pbu":3,"onePt":2},"Nora Tommerdahl":{"rushAtt":3,"rushYds":29,"rushLong":21,"recTgt":1,"rec":1,"recYds":5,"recLong":5},"Milaynah Johnson":{"rushAtt":4,"rushYds":48,"rushTD":2,"rushLong":26,"flagPull":2,"pbu":1},"Skylar Sherman":{"rushAtt":1,"passAtt":3,"passComp":2,"passYds":16,"passTD":1,"passLong":11}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"6-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"5-yard touchdown catch","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Milaynah Johnson","desc":"26-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Kinsley Flaatten","desc":"1-yard touchdown catch","detail":"pass from Lenni Bechtel"}]}]};
+const players = SEASON_DATA.players;
+const games = SEASON_DATA.games;
+
+/* =====================================================================
+   SHARED HELPERS — identical copy lives in the main stats and
+   stat-pack pages.
+   ===================================================================== */
+
+function fullName(p) { return p.first + " " + p.last; }
+
+const SUM_FIELDS = ["rushAtt","rushYds","rushTD","passAtt","passComp","passYds","passTD",
+  "passInt","recTgt","rec","recYds","recTD","flagPull","sack","qbh","pbu","defInt","pickSix","onePt","twoPt"];
+const MAX_FIELDS = ["rushLong","passLong","recLong"];
+
+function emptyTotals() {
+  const t = {};
+  SUM_FIELDS.forEach(f => t[f] = 0);
+  MAX_FIELDS.forEach(f => t[f] = 0);
+  return t;
+}
+
+function seasonTotalsFor(name) {
+  const t = emptyTotals();
+  games.forEach(g => {
+    const b = g.box[name];
+    if (!b) return;
+    SUM_FIELDS.forEach(f => t[f] += (b[f] || 0));
+    MAX_FIELDS.forEach(f => t[f] = Math.max(t[f], b[f] || 0));
+  });
+  return t;
+}
+
+function pct(a, b) { return b ? ((a / b) * 100).toFixed(1) + "%" : "\u2014"; }
+
+function gamesPlayedFor(name) {
+  return games.filter(g => !(g.dnp || []).includes(name)).length;
+}
+
+/* =====================================================================
+   PAGE LOGIC
+   ===================================================================== */
+
+function slugify(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""); }
+
+let sortMode = "num";
+
+function renderRoster() {
+  const sorted = [...players].sort((a, b) =>
+    sortMode === "num" ? a.num - b.num : fullName(a).localeCompare(fullName(b))
+  );
+  document.getElementById("roster-grid").innerHTML = sorted.map(p => `
+    <div class="roster-card" data-player="${fullName(p)}">
+      <div class="card-num">${p.num}</div>
+      <h3>${fullName(p)}</h3>
+      <div class="position">${p.position}</div>
+      <div class="meta">${p.school} &middot; ${p.hometown}</div>
+    </div>
+  `).join("");
+
+  document.querySelectorAll(".roster-card").forEach(card => {
+    card.addEventListener("click", () => showProfile(card.dataset.player));
+  });
+}
+
+document.querySelectorAll("#sort-buttons button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    sortMode = btn.dataset.sort;
+    document.querySelectorAll("#sort-buttons button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderRoster();
+  });
+});
+
+function statLine(label, cols, vals) {
+  return `
+    <div class="table-scroll">
+      <table>
+        <thead><tr>${cols.map(c => `<th>${c}</th>`).join("")}</tr></thead>
+        <tbody><tr>${vals.map(v => `<td>${v}</td>`).join("")}</tr></tbody>
+      </table>
+    </div>
+  `;
+}
+
+function showProfile(name) {
+  const p = players.find(pl => fullName(pl) === name);
+  const s = seasonTotalsFor(name);
+  const gp = gamesPlayedFor(name);
+
+  let statsHtml = "";
+
+  if (s.rushAtt > 0) {
+    statsHtml += `<section><h2>Rushing</h2>${statLine("Rushing",
+      ["Att", "Yds", "Avg", "TD", "Long"],
+      [s.rushAtt, s.rushYds, (s.rushYds / s.rushAtt).toFixed(1), s.rushTD, s.rushLong])}</section>`;
+  }
+  if (s.passAtt > 0) {
+    statsHtml += `<section><h2>Passing</h2>${statLine("Passing",
+      ["Comp", "Att", "Pct", "Yds", "TD", "Int", "Long"],
+      [s.passComp, s.passAtt, pct(s.passComp, s.passAtt), s.passYds, s.passTD, s.passInt, s.passLong])}</section>`;
+  }
+  if (s.recTgt > 0) {
+    statsHtml += `<section><h2>Receiving</h2>${statLine("Receiving",
+      ["Tgt", "Rec", "Yds", "TD", "Long"],
+      [s.recTgt, s.rec, s.recYds, s.recTD, s.recLong])}</section>`;
+  }
+  if (s.flagPull > 0 || s.sack > 0 || s.qbh > 0 || s.pbu > 0 || s.defInt > 0 || s.pickSix > 0) {
+    statsHtml += `<section><h2>Defense / Special Teams</h2>${statLine("Defense",
+      ["Flag Pulls", "Sacks", "QB Hurries", "PBU", "Def INT", "Pick-6"],
+      [s.flagPull, s.sack, s.qbh, s.pbu, s.defInt, s.pickSix])}</section>`;
+  }
+  if (s.onePt > 0 || s.twoPt > 0) {
+    statsHtml += `<section><h2>Conversions</h2>${statLine("Conversions",
+      ["1pt", "2pt"],
+      [s.onePt, s.twoPt])}</section>`;
+  }
+  if (!statsHtml) {
+    statsHtml = `<div class="no-stats">No stats recorded yet this season.</div>`;
+  }
+
+  const gameRows = games.map(g => {
+    const dnp = (g.dnp || []).includes(name);
+    const b = g.box[name] || {};
+    const played = !dnp;
+    return `<tr>
+      <td>Week ${g.week}</td><td>vs ${g.opponent}</td>
+      <td>${dnp ? "DNP" : "\u2713"}</td>
+      <td>${b.rushYds !== undefined ? b.rushYds : (played ? "0" : "\u2014")}</td>
+      <td>${b.recYds !== undefined ? b.recYds : (played ? "0" : "\u2014")}</td>
+      <td>${b.passYds !== undefined ? b.passYds : (played ? "0" : "\u2014")}</td>
+      <td>${b.flagPull !== undefined ? b.flagPull : (played ? "0" : "\u2014")}</td>
+    </tr>`;
+  }).join("");
+
+  document.getElementById("view-profile").innerHTML = `
+    <div class="profile-head">
+      <div class="card-num">${p.num}</div>
+      <div>
+        <h2>${fullName(p)}</h2>
+        <div class="position">${p.position}</div>
+        <div class="meta-row">
+          <div><strong>School:</strong> ${p.school}</div>
+          <div><strong>Hometown:</strong> ${p.hometown}</div>
+          <div><strong>Games played:</strong> ${gp}</div>
+        </div>
+      </div>
+    </div>
+    ${statsHtml}
+    <section>
+      <h2>Game-by-game</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Week</th><th>Opponent</th><th>Played</th><th>Rush Yds</th><th>Rec Yds</th><th>Pass Yds</th><th>Flag Pulls</th></tr></thead>
+          <tbody>${gameRows}</tbody>
+        </table>
+      </div>
+    </section>
+  `;
+
+  document.getElementById("view-roster").classList.remove("active");
+  document.getElementById("view-profile").classList.add("active");
+  document.getElementById("back-link").classList.add("show");
+  document.getElementById("header-sub").textContent = fullName(p) + " \u2014 Player Profile";
+  window.location.hash = slugify(name);
+}
+
+document.getElementById("back-link").addEventListener("click", () => {
+  document.getElementById("view-profile").classList.remove("active");
+  document.getElementById("view-roster").classList.add("active");
+  document.getElementById("back-link").classList.remove("show");
+  document.getElementById("header-sub").textContent = "Roster \u00b7 Fall 2026 Season";
+  window.location.hash = "";
+});
+
+/* Deep-link support: seahawks-roster.html#lenni-bechtel opens straight
+   to that player's profile. */
+function tryOpenFromHash() {
+  const slug = window.location.hash.replace("#", "");
+  if (!slug) return;
+  const match = players.find(p => slugify(fullName(p)) === slug);
+  if (match) showProfile(fullName(match));
+}
+
+renderRoster();
+tryOpenFromHash();
+window.addEventListener("hashchange", tryOpenFromHash);
+</script>
+
+</body>
+</html>
