@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>14U Seahawks — Stat Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  =====================================================================
+  This page reads from season_data.json, which is generated from
+  seahawks-stats.xlsx. Update the workbook, regenerate season_data.json,
+  then rebuild this page — don't hand-edit the data below.
+
+  This page is print-first: open it in a browser and use Print >
+  Save as PDF. It intentionally has no tabs/buttons and light color
+  use so it prints cleanly on a home printer.
+  =====================================================================
+-->
+
+<style>
+  :root {
+    --navy: #002244;
+    --green: #69be28;
+    --gray: #6b7278;
+    --line: #cfd4d0;
+    --ink: #16191c;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 28px 26px 60px;
+    background: white;
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  h1, h2, .num { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.01em; }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+
+  .masthead h1 { margin: 0; font-size: 24px; color: var(--navy); text-transform: uppercase; }
+  .masthead .asof { font-size: 12px; color: var(--gray); }
+
+  .subtitle { font-size: 12.5px; color: var(--gray); margin: 4px 0 20px; }
+
+  .snapshot {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
+  .snapshot div { flex: 1; text-align: center; padding: 10px 6px; border-right: 1px solid var(--line); }
+  .snapshot div:last-child { border-right: none; }
+  .snapshot .num { font-size: 20px; color: var(--navy); }
+  .snapshot .label { font-size: 10.5px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  section { margin-bottom: 22px; break-inside: avoid; }
+  section h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    background: var(--navy);
+    margin: 0 0 8px;
+    padding: 5px 9px;
+    letter-spacing: 0.02em;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  th, td { padding: 4px 7px; text-align: right; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+  thead th {
+    border-bottom: 1.5px solid var(--navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+  }
+  tbody tr:nth-child(even) { background: #f5f6f5; }
+  tfoot td { font-weight: 700; border-top: 1.5px solid var(--navy); border-bottom: none; }
+
+  .plays-list { list-style: none; margin: 0; padding: 0; font-size: 12px; }
+  .plays-list li { padding: 4px 0; border-bottom: 1px dotted var(--line); }
+  .plays-list li.pat { padding-left: 18px; color: var(--gray); font-size: 11px; }
+  .plays-list .wk { color: var(--navy); font-weight: 700; margin-right: 6px; }
+
+  footer { margin-top: 30px; font-size: 10.5px; color: var(--gray); text-align: center; }
+
+  .print-note {
+    background: #f0f3ef;
+    border: 1px dashed var(--line);
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+
+  .portal-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .portal-nav a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+  .portal-nav a:hover, .portal-nav a[aria-current="page"] { color: var(--navy); background: var(--green); border-color: var(--green); }
+  .portal-nav .portal-home { margin-right: auto; border-color: transparent; padding-left: 0; }
+
+  @media print {
+    body { padding: 0; max-width: none; font-size: 11px; }
+    .print-note, .portal-nav { display: none; }
+    @page { size: letter; margin: 0.6in; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="portal-nav" aria-label="Stats portal navigation">
+  <a class="portal-home" href="./">2026 Seahawks Portal</a>
+  <a href="stats.html">Stats</a>
+  <a href="roster.html">Roster</a>
+  <a href="stat-pack.html" aria-current="page">Stat Pack</a>
+</nav>
+
+<div class="print-note">This page is built to print. Use your browser's Print command and choose "Save as PDF" (or print directly) for a clean stat pack.</div>
+
+<div class="masthead">
+  <h1>14U Seahawks — Stat Pack</h1>
+  <div class="asof" id="asof"></div>
+</div>
+<div class="subtitle">River Falls Girls Flag Football &middot; Fall 2026 Season</div>
+
+<div class="snapshot" id="snapshot"></div>
+
+<section>
+  <h2>Schedule &amp; Results</h2>
+  <div id="schedule-table"></div>
+</section>
+
+<section>
+  <h2>Team Totals</h2>
+  <div id="team-table"></div>
+</section>
+
+<section>
+  <h2>Rushing</h2>
+  <div id="rushing-table"></div>
+</section>
+
+<section>
+  <h2>Passing</h2>
+  <div id="passing-table"></div>
+</section>
+
+<section>
+  <h2>Receiving</h2>
+  <div id="receiving-table"></div>
+</section>
+
+<section>
+  <h2>Defense / Special Teams</h2>
+  <div id="defense-table"></div>
+</section>
+
+<section>
+  <h2>Scoring Summary</h2>
+  <ul class="plays-list" id="scoring-summary"></ul>
+</section>
+
+<footer>14U Seahawks &middot; River Falls Girls Flag Football LLC &middot; generated from team stat tracker</footer>
+
+<script>
+const SEASON_DATA = {"players":[{"num":1,"first":"Kinsley","last":"Flaatten","position":"WR/LB","hometown":"River Falls, WI","school":"Westside"},{"num":2,"first":"Isla","last":"Pickard","position":"C/CB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":3,"first":"Sutton","last":"Merta","position":"QB/S","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":4,"first":"Lenni","last":"Bechtel","position":"WR/CB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":6,"first":"Reece","last":"Watters","position":"WR/CB","hometown":"Hudson, WI","school":"Hudson"},{"num":7,"first":"Dianna","last":"Kreidermacher","position":"WR/LB","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":8,"first":"Charlie","last":"Pickering","position":"ATH/LB","hometown":"River Falls, WI","school":"Greenwood"},{"num":11,"first":"Amara","last":"Peters","position":"RB/R","hometown":"River Falls, WI","school":"Rocky Branch"},{"num":16,"first":"Nora","last":"Tommerdahl","position":"RB/CB","hometown":"River Falls, WI","school":"Westside"},{"num":21,"first":"Milaynah","last":"Johnson","position":"RB/R","hometown":"River Falls, WI","school":"Meyer"},{"num":31,"first":"Skylar","last":"Sherman","position":"ATH/S","hometown":"River Falls, WI","school":"Rocky Branch"}],"games":[{"week":1,"date":"2026-09-12","opponent":"Rams","scoreUs":26,"scoreThem":6,"dnp":["Kinsley Flaatten"],"box":{"Isla Pickard":{"recTgt":3,"rec":2,"recYds":20,"recLong":10,"flagPull":2},"Sutton Merta":{"passAtt":6,"passComp":4,"passYds":48,"passTD":1,"passLong":19},"Lenni Bechtel":{"rushAtt":4,"rushYds":13,"rushLong":7,"recTgt":1,"rec":1,"recYds":12,"recLong":12,"flagPull":2,"twoPt":1},"Reece Watters":{"recTgt":1,"flagPull":1},"Dianna Kreidermacher":{},"Charlie Pickering":{"rushAtt":2,"rushYds":17,"rushLong":14,"flagPull":3},"Amara Peters":{"rushAtt":3,"rushYds":43,"rushTD":1,"rushLong":21,"recTgt":2,"rec":2,"recYds":28,"recTD":1,"recLong":19,"flagPull":2},"Nora Tommerdahl":{"rushAtt":3,"rushYds":18,"rushLong":10,"recTgt":1,"flagPull":1},"Milaynah Johnson":{"rushAtt":5,"rushYds":49,"rushTD":1,"rushLong":24,"recTgt":1,"flagPull":2,"qbh":3},"Skylar Sherman":{"passAtt":3,"passComp":1,"passYds":12,"passLong":12,"flagPull":6,"defInt":1,"pickSix":1}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"16-yard touchdown run"},{"type":"PAT","player":"Lenni Bechtel","desc":"2-point conversion","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Skylar Sherman","desc":"5-yard interception return touchdown"},{"type":"TD","player":"Amara Peters","desc":"9-yard touchdown catch","detail":"pass from Sutton Merta"},{"type":"TD","player":"Amara Peters","desc":"14-yard touchdown run"}]},{"week":2,"date":"2026-09-19","opponent":"Dolphins","scoreUs":0,"scoreThem":20,"dnp":[],"box":{"Kinsley Flaatten":{"rushAtt":1},"Isla Pickard":{"rushAtt":3,"rushYds":7,"rushLong":4},"Sutton Merta":{"passAtt":9,"passComp":2,"passYds":18,"passLong":11,"recTgt":1,"flagPull":3},"Lenni Bechtel":{"rushAtt":2,"recTgt":1},"Reece Watters":{"recTgt":3,"flagPull":3},"Dianna Kreidermacher":{"rushAtt":2,"rushYds":7,"rushLong":5},"Charlie Pickering":{"rushAtt":1},"Amara Peters":{"passAtt":1,"recTgt":3,"rec":1,"recYds":7,"recLong":7,"flagPull":3,"pbu":1},"Nora Tommerdahl":{"rushAtt":1,"rushYds":-1,"rushLong":-1,"recTgt":3,"rec":1,"recYds":11,"recLong":11,"flagPull":1},"Milaynah Johnson":{"rushAtt":6,"rushYds":27,"rushLong":8,"flagPull":3,"qbh":5},"Skylar Sherman":{"passAtt":1,"passInt":1,"flagPull":2,"defInt":1}},"scoringPlays":[]},{"week":3,"date":"2026-09-26","opponent":"Raiders","scoreUs":6,"scoreThem":40,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":3,"rec":2,"recYds":12,"recLong":9,"flagPull":2},"Isla Pickard":{"recTgt":2},"Sutton Merta":{"rushAtt":1,"rushYds":7,"rushLong":7,"passAtt":10,"passComp":4,"passYds":29,"passLong":10,"passInt":1,"flagPull":3},"Lenni Bechtel":{"rushAtt":1,"rushYds":2,"rushLong":2,"recTgt":3,"rec":1,"recYds":11,"recLong":11,"flagPull":1},"Reece Watters":{"rushAtt":1,"rushYds":1,"rushLong":1,"recTgt":2,"rec":1,"recYds":5,"recLong":5,"pbu":1},"Dianna Kreidermacher":{},"Charlie Pickering":{"passAtt":4,"passComp":3,"passYds":24,"passLong":15,"recTgt":1,"rec":1,"recYds":6,"recLong":6,"flagPull":2},"Amara Peters":{"rushAtt":2,"rushYds":2,"rushLong":2,"recTgt":4,"rec":3,"recYds":18,"recLong":6,"flagPull":5,"sack":1,"defInt":1},"Nora Tommerdahl":{"recTgt":2,"rec":2,"recYds":31,"recTD":1,"recLong":24},"Milaynah Johnson":{"rushAtt":3,"rushYds":12,"rushLong":7,"recTgt":1,"rec":1,"recYds":11,"recLong":11,"flagPull":5,"qbh":1},"Skylar Sherman":{"passAtt":6,"passComp":6,"passYds":60,"passTD":1,"passLong":24,"recTgt":2,"rec":2,"recYds":19,"recLong":15,"flagPull":1,"pbu":1}},"scoringPlays":[{"type":"TD","player":"Nora Tommerdahl","desc":"24-yard touchdown catch","detail":"pass from Skylar Sherman"}]},{"week":4,"date":"2026-10-03","opponent":"Dolphins","scoreUs":6,"scoreThem":29,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":1,"rec":1,"recYds":2,"recLong":2,"flagPull":2},"Isla Pickard":{"flagPull":1},"Sutton Merta":{"passAtt":8,"passComp":5,"passYds":28,"passLong":8,"passInt":1,"flagPull":1,"qbh":1},"Lenni Bechtel":{"recTgt":6,"rec":4,"recYds":19,"recLong":11,"pbu":1},"Reece Watters":{"recTgt":3,"rec":1,"recYds":8,"recLong":8,"pbu":1},"Dianna Kreidermacher":{"recTgt":1,"rec":1,"recYds":3,"recLong":3,"qbh":1},"Charlie Pickering":{"passAtt":7,"passComp":3,"passYds":23,"passLong":11,"flagPull":3,"pbu":2},"Amara Peters":{"rushAtt":2,"rushYds":6,"rushLong":5,"recTgt":5,"rec":3,"recYds":36,"recLong":26,"flagPull":3},"Nora Tommerdahl":{"rushAtt":1,"rushYds":4,"rushLong":4,"recTgt":3},"Milaynah Johnson":{"rushAtt":3,"rushYds":25,"rushTD":1,"rushLong":16,"recTgt":3,"rec":2,"recYds":15,"recLong":8,"flagPull":3,"qbh":2,"pbu":2},"Skylar Sherman":{"rushAtt":1,"passAtt":7,"passComp":4,"passYds":32,"passLong":26,"pbu":1}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"16-yard touchdown run"}]},{"week":5,"date":"2026-10-10","opponent":"Raiders","scoreUs":18,"scoreThem":29,"dnp":[],"box":{"Kinsley Flaatten":{"rushAtt":1,"flagPull":4},"Isla Pickard":{"flagPull":4},"Sutton Merta":{"rushAtt":4,"rushYds":68,"rushTD":1,"rushLong":45,"passAtt":4,"passComp":1,"passYds":16,"passLong":16,"flagPull":3,"sack":1},"Lenni Bechtel":{"recTgt":3,"rec":1,"recYds":16,"recLong":16},"Reece Watters":{"flagPull":2},"Dianna Kreidermacher":{"flagPull":1},"Charlie Pickering":{"rushAtt":1,"rushYds":5,"rushLong":5,"passAtt":4,"passComp":3,"passYds":56,"passTD":1,"passLong":48,"flagPull":4},"Amara Peters":{"rushAtt":2,"rushYds":21,"rushLong":14,"recTgt":2,"rec":2,"recYds":8,"recLong":4,"flagPull":2},"Nora Tommerdahl":{"rushAtt":1,"recTgt":6,"rec":3,"recYds":37,"recLong":16},"Milaynah Johnson":{"rushAtt":4,"rushYds":39,"rushTD":1,"rushLong":22,"recTgt":2,"rec":1,"recYds":48,"recTD":1,"recLong":48,"flagPull":3,"qbh":1},"Skylar Sherman":{"passAtt":6,"passComp":3,"passYds":37,"passLong":16,"passInt":1,"recTgt":1,"flagPull":2}},"scoringPlays":[{"type":"TD","player":"Sutton Merta","desc":"45-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"22-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"48-yard touchdown catch","detail":"pass from Charlie Pickering"}]},{"week":6,"date":"2026-10-17","opponent":"Rams","scoreUs":33,"scoreThem":0,"dnp":["Skylar Sherman"],"box":{"Kinsley Flaatten":{"flagPull":8},"Isla Pickard":{"rushAtt":3,"rushYds":17,"rushLong":7},"Sutton Merta":{"rushAtt":2,"rushYds":56,"rushTD":1,"rushLong":48,"passAtt":3,"passComp":2,"passYds":27,"passTD":1,"passLong":22,"recTgt":1,"rec":1,"recYds":27,"recTD":1,"recLong":27,"flagPull":3,"onePt":1},"Lenni Bechtel":{"rushAtt":2,"rushYds":12,"rushLong":7,"passAtt":3,"passComp":1,"passYds":12,"passLong":12,"recTgt":1,"flagPull":2},"Reece Watters":{"rushAtt":4,"rushYds":21,"rushLong":7,"passAtt":2,"recTgt":1,"rec":1,"recYds":12,"recLong":12,"flagPull":2,"pbu":2},"Dianna Kreidermacher":{"rushAtt":2,"rushYds":8,"rushLong":7},"Charlie Pickering":{"rushAtt":1,"rushYds":14,"rushLong":14,"passAtt":1,"recTgt":2,"flagPull":2},"Amara Peters":{"rushAtt":2,"rushYds":30,"rushLong":18,"passAtt":1,"passComp":1,"passYds":27,"passTD":1,"passLong":27,"recTgt":3,"rec":2,"recYds":27,"recTD":1,"recLong":22,"flagPull":1,"pbu":1,"onePt":2},"Nora Tommerdahl":{"rushAtt":1,"rushYds":6,"rushLong":6,"recTgt":2,"flagPull":1},"Milaynah Johnson":{"rushAtt":2,"rushYds":45,"rushTD":2,"rushLong":24,"flagPull":4,"qbh":2},"Skylar Sherman":{}},"scoringPlays":[{"type":"TD","player":"Amara Peters","desc":"5-yard touchdown catch","detail":"pass from Sutton Merta"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"48-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"27-yard touchdown catch","detail":"pass from Amara Peters"},{"type":"PAT","player":"Sutton Merta","desc":"1-point conversion","detail":"pass from Amara Peters"},{"type":"TD","player":"Milaynah Johnson","desc":"24-yard touchdown run"},{"type":"TD","player":"Milaynah Johnson","desc":"21-yard touchdown run"}]},{"week":7,"date":"2026-10-24","opponent":"Rams","scoreUs":26,"scoreThem":0,"dnp":[],"box":{"Kinsley Flaatten":{"recTgt":1,"rec":1,"recYds":1,"recTD":1,"recLong":1,"flagPull":1},"Isla Pickard":{"rushAtt":1,"rushYds":7,"rushLong":7},"Sutton Merta":{"rushAtt":1,"rushYds":10,"rushLong":10,"passAtt":1,"passComp":1,"passYds":17,"passLong":17,"recTgt":2,"rec":1,"recYds":5,"recTD":1,"recLong":5,"flagPull":1,"pbu":1},"Lenni Bechtel":{"passAtt":3,"passComp":2,"passYds":6,"passTD":1,"passLong":5,"flagPull":1},"Reece Watters":{"rushAtt":1,"rushYds":2,"rushLong":2},"Dianna Kreidermacher":{},"Charlie Pickering":{"recTgt":1,"flagPull":3,"pbu":1},"Amara Peters":{"rushAtt":2,"rushYds":22,"rushLong":12,"recTgt":2,"rec":2,"recYds":28,"recLong":17,"flagPull":1,"pbu":3,"onePt":2},"Nora Tommerdahl":{"rushAtt":3,"rushYds":29,"rushLong":21,"recTgt":1,"rec":1,"recYds":5,"recLong":5},"Milaynah Johnson":{"rushAtt":4,"rushYds":48,"rushTD":2,"rushLong":26,"flagPull":2,"pbu":1},"Skylar Sherman":{"rushAtt":1,"passAtt":3,"passComp":2,"passYds":16,"passTD":1,"passLong":11}},"scoringPlays":[{"type":"TD","player":"Milaynah Johnson","desc":"6-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Sutton Merta"},{"type":"TD","player":"Sutton Merta","desc":"5-yard touchdown catch","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Milaynah Johnson","desc":"26-yard touchdown run"},{"type":"PAT","player":"Amara Peters","desc":"1-point conversion","detail":"pass from Skylar Sherman"},{"type":"TD","player":"Kinsley Flaatten","desc":"1-yard touchdown catch","detail":"pass from Lenni Bechtel"}]}]};
+const players = SEASON_DATA.players;
+const games = SEASON_DATA.games;
+
+/* =====================================================================
+   SHARED HELPERS — identical copy lives in the main stats and
+   roster pages.
+   ===================================================================== */
+
+function fullName(p) { return p.first + " " + p.last; }
+
+function tagNames(text) {
+  let out = text;
+  players.forEach(p => {
+    const full = fullName(p);
+    if (out.includes(full)) out = out.split(full).join(`#${p.num} ${full}`);
+  });
+  return out;
+}
+
+const SUM_FIELDS = ["rushAtt","rushYds","rushTD","passAtt","passComp","passYds","passTD",
+  "passInt","recTgt","rec","recYds","recTD","flagPull","sack","qbh","pbu","defInt","pickSix","onePt","twoPt"];
+const MAX_FIELDS = ["rushLong","passLong","recLong"];
+
+function emptyTotals() {
+  const t = {};
+  SUM_FIELDS.forEach(f => t[f] = 0);
+  MAX_FIELDS.forEach(f => t[f] = 0);
+  return t;
+}
+
+function seasonTotalsFor(name) {
+  const t = emptyTotals();
+  games.forEach(g => {
+    const b = g.box[name];
+    if (!b) return;
+    SUM_FIELDS.forEach(f => t[f] += (b[f] || 0));
+    MAX_FIELDS.forEach(f => t[f] = Math.max(t[f], b[f] || 0));
+  });
+  return t;
+}
+
+function pct(a, b) { return b ? ((a / b) * 100).toFixed(1) + "%" : "\u2014"; }
+
+/* =====================================================================
+   PAGE LOGIC
+   ===================================================================== */
+
+const seasonByPlayer = {};
+players.forEach(p => seasonByPlayer[fullName(p)] = seasonTotalsFor(fullName(p)));
+
+const teamTotals = emptyTotals();
+players.forEach(p => {
+  const s = seasonByPlayer[fullName(p)];
+  SUM_FIELDS.forEach(f => teamTotals[f] += s[f]);
+  MAX_FIELDS.forEach(f => teamTotals[f] = Math.max(teamTotals[f], s[f]));
+});
+
+const totalTDs = teamTotals.rushTD + teamTotals.recTD + teamTotals.pickSix;
+const totalYards = teamTotals.rushYds + teamTotals.passYds;
+
+let wins = 0, losses = 0, ties = 0;
+games.forEach(g => {
+  if (g.scoreUs > g.scoreThem) wins++;
+  else if (g.scoreUs < g.scoreThem) losses++;
+  else ties++;
+});
+const recordStr = ties > 0 ? `${wins}-${losses}-${ties}` : `${wins}-${losses}`;
+
+document.getElementById("asof").textContent =
+  "As of Week " + Math.max(...games.map(g => g.week)) + " \u2014 " + games[games.length - 1].date;
+
+document.getElementById("snapshot").innerHTML = [
+  [recordStr, "Record"],
+  [totalTDs, "Total TDs"],
+  [totalYards, "Total Yards"],
+  [teamTotals.flagPull, "Flag Pulls"]
+].map(([n, l]) => `<div><div class="num">${n}</div><div class="label">${l}</div></div>`).join("");
+
+/* ---- Schedule ---- */
+const schedRows = games.map(g => {
+  const result = g.scoreUs > g.scoreThem ? "W" : g.scoreUs < g.scoreThem ? "L" : "T";
+  return `<tr><td>Week ${g.week}</td><td>${g.date}</td><td>vs ${g.opponent}</td><td>${result} ${g.scoreUs}-${g.scoreThem}</td></tr>`;
+}).join("");
+document.getElementById("schedule-table").innerHTML = `
+  <table>
+    <thead><tr><th>Week</th><th>Date</th><th>Opponent</th><th>Result</th></tr></thead>
+    <tbody>${schedRows}</tbody>
+  </table>
+`;
+
+/* ---- Team totals ---- */
+document.getElementById("team-table").innerHTML = `
+  <table>
+    <thead><tr><th>Category</th><th>Att / Tgt</th><th>Comp / Rec</th><th>Yds</th><th>TD</th><th>Long</th></tr></thead>
+    <tbody>
+      <tr><td>Rushing</td><td>${teamTotals.rushAtt}</td><td>\u2014</td><td>${teamTotals.rushYds}</td><td>${teamTotals.rushTD}</td><td>${teamTotals.rushLong}</td></tr>
+      <tr><td>Passing</td><td>${teamTotals.passAtt}</td><td>${teamTotals.passComp} (${pct(teamTotals.passComp, teamTotals.passAtt)})</td><td>${teamTotals.passYds}</td><td>${teamTotals.passTD}</td><td>${teamTotals.passLong}</td></tr>
+      <tr><td>Receiving</td><td>${teamTotals.recTgt}</td><td>${teamTotals.rec}</td><td>${teamTotals.recYds}</td><td>${teamTotals.recTD}</td><td>${teamTotals.recLong}</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="3">Flag Pulls: ${teamTotals.flagPull} &nbsp; Sacks: ${teamTotals.sack} &nbsp; QBH: ${teamTotals.qbh} &nbsp; PBU: ${teamTotals.pbu}</td>
+          <td colspan="3">Def INT: ${teamTotals.defInt} &nbsp; Pick-6: ${teamTotals.pickSix} &nbsp; 2pt: ${teamTotals.twoPt} &nbsp; 1pt: ${teamTotals.onePt}</td></tr>
+    </tfoot>
+  </table>
+`;
+
+/* ---- Individual tables (every player who has a stat in that category, plus a Total row) ---- */
+function playerRow(cells) { return `<tr>${cells.map(c => `<td>${c}</td>`).join("")}</tr>`; }
+
+function buildTable(headers, rows, totalRow) {
+  return `<table>
+    <thead><tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr></thead>
+    <tbody>${rows.map(playerRow).join("")}</tbody>
+    <tfoot>${playerRow(totalRow)}</tfoot>
+  </table>`;
+}
+
+const rushRows = players
+  .filter(p => seasonByPlayer[fullName(p)].rushAtt > 0)
+  .sort((a, b) => seasonByPlayer[fullName(b)].rushYds - seasonByPlayer[fullName(a)].rushYds)
+  .map(p => {
+    const s = seasonByPlayer[fullName(p)];
+    return [`#${p.num}`, fullName(p), s.rushAtt, s.rushYds, (s.rushYds / s.rushAtt).toFixed(1), s.rushTD, s.rushLong];
+  });
+document.getElementById("rushing-table").innerHTML = buildTable(
+  ["#", "Player", "Att", "Yds", "Avg", "TD", "Long"], rushRows,
+  ["", "Total", teamTotals.rushAtt, teamTotals.rushYds, teamTotals.rushAtt ? (teamTotals.rushYds/teamTotals.rushAtt).toFixed(1) : "\u2014", teamTotals.rushTD, teamTotals.rushLong]
+);
+
+const passRows = players
+  .filter(p => seasonByPlayer[fullName(p)].passAtt > 0)
+  .sort((a, b) => seasonByPlayer[fullName(b)].passYds - seasonByPlayer[fullName(a)].passYds)
+  .map(p => {
+    const s = seasonByPlayer[fullName(p)];
+    return [`#${p.num}`, fullName(p), s.passComp, s.passAtt, pct(s.passComp, s.passAtt), s.passYds, s.passTD, s.passLong];
+  });
+document.getElementById("passing-table").innerHTML = buildTable(
+  ["#", "Player", "Comp", "Att", "Pct", "Yds", "TD", "Long"], passRows,
+  ["", "Total", teamTotals.passComp, teamTotals.passAtt, pct(teamTotals.passComp, teamTotals.passAtt), teamTotals.passYds, teamTotals.passTD, teamTotals.passLong]
+);
+
+const recRows = players
+  .filter(p => seasonByPlayer[fullName(p)].recTgt > 0)
+  .sort((a, b) => seasonByPlayer[fullName(b)].recYds - seasonByPlayer[fullName(a)].recYds)
+  .map(p => {
+    const s = seasonByPlayer[fullName(p)];
+    return [`#${p.num}`, fullName(p), s.recTgt, s.rec, s.recYds, s.recTD, s.recLong];
+  });
+document.getElementById("receiving-table").innerHTML = buildTable(
+  ["#", "Player", "Tgt", "Rec", "Yds", "TD", "Long"], recRows,
+  ["", "Total", teamTotals.recTgt, teamTotals.rec, teamTotals.recYds, teamTotals.recTD, teamTotals.recLong]
+);
+
+const defRows = players
+  .filter(p => seasonByPlayer[fullName(p)].flagPull > 0 || seasonByPlayer[fullName(p)].sack > 0 || seasonByPlayer[fullName(p)].qbh > 0 || seasonByPlayer[fullName(p)].pbu > 0 || seasonByPlayer[fullName(p)].defInt > 0 || seasonByPlayer[fullName(p)].pickSix > 0)
+  .sort((a, b) => seasonByPlayer[fullName(b)].flagPull - seasonByPlayer[fullName(a)].flagPull)
+  .map(p => {
+    const s = seasonByPlayer[fullName(p)];
+    return [`#${p.num}`, fullName(p), s.flagPull, s.sack, s.qbh, s.pbu, s.defInt, s.pickSix];
+  });
+document.getElementById("defense-table").innerHTML = buildTable(
+  ["#", "Player", "Flag Pulls", "Sacks", "QBH", "PBU", "Def INT", "Pick-6"], defRows,
+  ["", "Total", teamTotals.flagPull, teamTotals.sack, teamTotals.qbh, teamTotals.pbu, teamTotals.defInt, teamTotals.pickSix]
+);
+
+/* ---- Scoring summary ---- */
+document.getElementById("scoring-summary").innerHTML = games.map(g => {
+  return g.scoringPlays.map(sp => {
+    const tag = tagNames(sp.player);
+    const detail = sp.detail ? ` (${tagNames(sp.detail)})` : "";
+    const cls = sp.type === "PAT" ? "pat" : "";
+    const wk = sp.type === "PAT" ? "" : `<span class="wk">Wk ${g.week}</span>`;
+    return `<li class="${cls}">${wk}${tag} \u2014 ${sp.desc}${detail}</li>`;
+  }).join("");
+}).join("");
+</script>
+
+</body>
+</html>
